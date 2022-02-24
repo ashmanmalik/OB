@@ -5,28 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vercel + PHP</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.4/tailwind.min.css" />
+    <title> Integration BASIQ WITH OB </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.4/tailwind.min.css" />   
+    <link rel="stylesheet" href="style.css" />   
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="config.js" />
 </head>
 
 <body class="font-mono bg-gray-300 w-screen h-screen flex items-center justify-center">
-    <div>
-        <div class="text-5xl font-bold">
-            Vercel + PHP
-            <a class="inline-block" href="https://vercel.com/new/project?template=https://github.com/juicyfx/vercel-examples/tree/master/php">
-                <img src="https://vercel.com/button" alt="Deploy to Vercel" />
-            </a>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="login-reg-panel">
+        <div class="login-info-box">
+            <h2>Have an account?</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            <label id="label-register" for="log-reg-show">Login</label>
+            <input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
         </div>
-
-        <p class="text-xl my-10">Use the <strong>deploy</strong> button or follow these steps.</p>
-
-        <ol class="list-decimal my-4 mx-8 text-normal">
-            <li class="py-2">Clone repository <code class="bg-pink-600 rounded rounded-sm text-white p-2">git clone git@github.com:juicyfx/vercel-examples.git</code></li>
-            <li class="py-2">Switch to <code>/php</code> folder and run <code class="underline font-bold">vercel</code></li>
-            <li class="py-2">Open generated <strong>*.vercel.app</strong> domain [<a class="text-pink-800" href="https://php.vercel.app">demo</a>]</li>
-            <li class="py-2">Discover <strong>*.vercel.app/api/</strong> PHP functions [<a class="text-pink-800" href="https://php.vercel.app/api/">demo</a>] </li>
-        </ol>
+                            
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <p>Lorem ipsum dolor sit amet</p>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="radio" name="active-log-panel" id="log-login-show">
+        </div>
+                            
+        <div class="white-panel">
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="button" value="Login">
+                <a href="">Forgot password?</a>
+            </div>
+            <div class="register-show">
+                <h2>REGISTER</h2>
+                <input type="text" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <input type="button" value="Register">
+            </div>
+        </div>
     </div>
+
+
 </body>
 
 </html>
