@@ -106,12 +106,7 @@ echo "client token : ".$client_obj->access_token;
 
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
-echo $redirect_url; 
-?>
-<script type="text/javascript" language="Javascript">window.open(<? echo $redirect_url; ?>);</script>
-<?
-
-//header("location: ".$redirect_url. "");
+header("location: ".$redirect_url. "");
 ob_end_flush(); 
 
 ?>
