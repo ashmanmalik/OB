@@ -4,11 +4,11 @@
 header('content-type: application/json');
 echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 
-//var_dump($_POST);
+var_dump($_POST);
 // Definining Variable for Now to Check. 
 // Validation needs to be added soon. 
-$mobile = $_POST['mobile'];
-$email = $_POST['name'];
+$mobile = json_decode( $_POST['mobile'] );
+$email = json_decode( $_POST['name'] );
 
 echo "Mobile: ".$mobile."| Email: " $email;
 
