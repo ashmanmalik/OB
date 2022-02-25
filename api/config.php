@@ -2,7 +2,7 @@
 
 
 header('content-type: application/json');
-echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
+//echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 
 var_dump($_POST);
 // Definining Variable for Now to Check. 
