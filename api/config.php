@@ -74,7 +74,11 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $resp = curl_exec($curl);
 curl_close($curl);
-var_dump($resp);
+$user_object = json_decode( $resp );
+
+echo "\n";
+echo $user_object->id; 
+echo "\n"; 
 
 
 
