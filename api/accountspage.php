@@ -1,11 +1,8 @@
 <?php 
 
-$db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+$db = new SQLite3('/tmp/db.sqlite');
 
-$visits = $db->querySingle('SELECT count(user) FROM "cipher"');
-
-var_dump($visits);
-echo("value: $visits");
+var_dump($db->querySingle('SELECT count(id) from cipher'));
 
 $db->close();
 
