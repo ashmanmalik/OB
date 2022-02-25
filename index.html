@@ -18,18 +18,18 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <style type="text/css">
-#loader {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.75) url(loading2.gif) no-repeat center center;
-  z-index: 10000;
-}
-</style>
+        #loader {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          background: rgba(0,0,0,0.75) url(loading2.gif) no-repeat center center;
+          z-index: 10000;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +56,7 @@
                 <h2> <i class="bi bi-bank2"></i> PHP Integration with BASIQ</h2>
                 <input type="text" name="email" placeholder="Email" required>
                 <input type="text" name="mobile" placeholder="Mobile No" required>
-                <button type="submit" class="btn btn-primary">Connect my Bank Account</button>
+                <button type="submit" class="btn btn-primary"><i class="bi bi-lock-fill"></i>Connect my Bank Account</button> <div id="loader"></div>
                 <!-- <a href="#">Forgot password?</a> --> 
                 <br/> <br/>
                 <p> <i class="bi bi-x-circle"></i>
@@ -73,7 +73,7 @@
     </form>
     </div>
 
-<div id="loader"></div>
+
 <!-- INCLUDE "t2228.php:PHP" -->
  
 <script src="http://code.jquery.com/jquery.js"></script>
