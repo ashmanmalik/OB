@@ -101,26 +101,6 @@ $client_obj = json_decode( $client_token );
 
 echo "client token : ".$client_obj->access_token;
 
-
-// Storing the values in DB
-
-$db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
-
-$db->query('CREATE TABLE IF NOT EXISTS "cipher" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    "user" VARCHAR,
-    "token" VARCHAR, 
-    "time" DATETIME
-)');
-
-$statement = $db->prepare('INSERT INTO "cipher" ("user", "token", "time") VALUES ('.$user_object->id;.','$server_obj->token', :time)');
-//$statement->bindValue(':url', ($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? 'https') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-$statement->bindValue(':time', date('Y-m-d H:i:s'));
-$statement->execute();
-
-
-$db->close();
-
 // End Database ..
 
 
