@@ -85,7 +85,7 @@ $(function() {
     e.preventDefault();
     spinner.show();
     $.ajax({
-      url: 't2228.php',
+      url: '/api/config.php',
       data: $(this).serialize(),
       method: 'post',
       dataType: 'JSON'
