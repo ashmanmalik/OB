@@ -111,7 +111,9 @@ $_SESSION["user"] = $user_object->id;
 
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
+header('Access-Control-Allow-Origin: *');
 header("location: ".$redirect_url. "");
+
 ob_end_flush(); 
 
 ?>
