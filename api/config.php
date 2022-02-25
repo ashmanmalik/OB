@@ -108,7 +108,7 @@ header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
 sleep(3);
 $response = new stdClass;
 $response->status = "success";
-$response->url = 'Access-Control-Allow-Origin: location: '.$redirect_url.'';
+$response->url = $redirect_url;
 die(json_encode($response));
 
 ob_end_flush(); 
