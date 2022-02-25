@@ -3,9 +3,7 @@
 
 //header('content-type: application/json');
 //echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
-
-//var_dump($_POST);
-// Definining Variable for Now to Check. 
+ob_start(); 
 // Validation needs to be added soon. 
 echo $email = $_POST['email'];
 echo "\n";
@@ -38,14 +36,9 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $server_token = curl_exec($curl);
 curl_close($curl);
 
-
 $server_obj = json_decode( $server_token );
 echo "\n";
 echo $server_obj->access_token; 
-echo "\n";
-
-echo "\n";
-echo "\n";
 echo "\n";
 
 // Calling user EP to generate a user using token. 
@@ -79,8 +72,6 @@ $user_object = json_decode( $resp );
 echo "\n";
 echo $user_object->id; 
 echo "\n"; 
-
-
 
 // Calling token for Client_access EP to use it into Consent. 
 
@@ -116,6 +107,6 @@ $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token
 echo $redirect_url; 
 
 header("location: ".$redirect_url. "");
-
+ob_end_flush(); 
 
 ?>
