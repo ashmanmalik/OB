@@ -1,6 +1,6 @@
 <?php 
 
-$db = SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+$db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 
 $visits = $db->querySingle('SELECT count(user) FROM "cipher"');
 
