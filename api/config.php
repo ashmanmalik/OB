@@ -91,14 +91,14 @@ curl_setopt($curl11, CURLOPT_URL, $url2);
 curl_setopt($curl11, CURLOPT_POST, true);
 curl_setopt($curl11, CURLOPT_RETURNTRANSFER, true);
 
-$headers = array(
+$headers1 = array(
    "Content-Type: application/x-www-form-urlencoded",
    "basiq-version: 3.0",
    "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA==",
 );
-curl_setopt($curl11, CURLOPT_HTTPHEADER, $headers);
-$data = '{"scope": "CLIENT_ACCESS"}';
-curl_setopt($curl11, CURLOPT_POSTFIELDS, $data);
+curl_setopt($curl11, CURLOPT_HTTPHEADER, $headers1);
+$data2 = '{"scope": "CLIENT_ACCESS"}';
+curl_setopt($curl11, CURLOPT_POSTFIELDS, $data2);
 //for debug only!
 curl_setopt($curl11, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($curl11, CURLOPT_SSL_VERIFYPEER, false);
@@ -106,7 +106,7 @@ curl_setopt($curl11, CURLOPT_SSL_VERIFYPEER, false);
 $client_token = curl_exec($curl11);
 curl_close($curl11);
 
-$client_obj = json_decode( $server_token );
+$client_obj = json_decode( $client_token );
 
 echo "client token : ".$client_obj->access_token;
 
