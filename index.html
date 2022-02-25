@@ -94,6 +94,7 @@ $(function() {
     }).done(function(resp) {
       spinner.hide();
       alert(resp.status);
+      location.window.href = resp.url;
     });
   });
 });
