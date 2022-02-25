@@ -41,7 +41,7 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
-echo "Server token : ".$server_obj->access_token; 
+echo $server_object = json_encode($server_obj->access_token); 
 echo "\n";
 
 // Calling token for Client_access EP to use it into Consent. 
@@ -88,7 +88,7 @@ curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $headers = array(
-   "Authorization: Bearer ".str_val($server_obj->access_token)."",
+   "Authorization: Bearer ".$server_object."",
    "Accept: application/json",
    "Content-Type: application/json",
 );
