@@ -88,7 +88,7 @@ curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $headers = array(
-   "Authorization: Bearer ".$server_object."",
+   "Authorization: Bearer {$server_object}",
    "Accept: application/json",
    "Content-Type: application/json",
 );
@@ -106,6 +106,7 @@ $resp = curl_exec($curl);
 curl_close($curl);
 var_dump($resp);
 
+var_dump($headers);
 
 // ... 
 
