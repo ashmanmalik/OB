@@ -30,7 +30,9 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $server_token = curl_exec($curl);
 curl_close($curl);
-var_dump($server_token);
+//var_dump($server_token);
+
+echo "client token : ".$server_token['access_token']; 
 
 // Calling token for Client_access EP to use it into Consent. 
 
@@ -56,7 +58,9 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $client_token = curl_exec($curl);
 curl_close($curl);
-var_dump($client_token);
+//var_dump($client_token);
+
+echo "client token : ".$client_token['access_token']; 
 
 
 // Calling user EP to generate a user using token. 
