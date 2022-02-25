@@ -32,7 +32,8 @@ $server_token = curl_exec($curl);
 curl_close($curl);
 //var_dump($server_token);
 
-echo "client token : ".$server_token['access_token']; 
+$server_obj = json_decode( $server_token );
+echo "Server token : ".$server_obj['access_token']; 
 
 // Calling token for Client_access EP to use it into Consent. 
 
@@ -60,7 +61,8 @@ $client_token = curl_exec($curl);
 curl_close($curl);
 //var_dump($client_token);
 
-echo "client token : ".$client_token['access_token']; 
+$client_obj = json_decode( $server_token );
+echo "client token : ".$server_obj['access_token'];
 
 
 // Calling user EP to generate a user using token. 
