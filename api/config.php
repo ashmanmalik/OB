@@ -1,6 +1,6 @@
 <?php 
 
-
+session_start();
 //header('content-type: application/json');
 //echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 ob_start(); 
@@ -101,28 +101,13 @@ $client_obj = json_decode( $client_token );
 
 echo "client token : ".$client_obj->access_token;
 
+// Session storage beigns
 
-// Storing the values in DB
+$_SESSION["server_access_token"] = $server_obj->access_token;
+$_SESSION["client_access_token"] = $client_obj->access_token;
+$_SESSION["user"] = $user_object->id;
 
-$db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
-
-$db->query('CREATE TABLE IF NOT EXISTS "cipher" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    "user" VARCHAR,
-    "token" VARCHAR, 
-    "time" DATETIME
-)');
-
-$statement = $db->prepare('INSERT INTO "cipher" ("user", "token", "time") VALUES (:user, :token, :time)');
-$statement->bindValue(':user', $user_object->id);
-$statement->bindValue(':token', $server_obj->access_token);
-$statement->bindValue(':time', date('Y-m-d H:i:s'));
-$statement->execute();
-
-$db->close();
-
-// End Database ..
-
+// Session storage ends
 
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
