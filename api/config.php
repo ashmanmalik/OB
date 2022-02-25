@@ -110,7 +110,8 @@ $client_obj = json_decode( $client_token );
 
 echo "client token : ".$client_obj->access_token;
 
-header("https://consent.basiq.io/home?userId=".$user_object->id."&token=".$client_obj->access_token);
+header("Location: https://consent.basiq.io/home?userId=".$user_object->id."&token=".$client_obj->access_token);
+die();
 // echo "\n";
 // echo "\n";
 // echo "\n";
