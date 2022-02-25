@@ -8,7 +8,7 @@ var_dump($_POST);
 // Definining Variable for Now to Check. 
 // Validation needs to be added soon. 
 echo $email = $_POST['email'];
-echo "<br/>";
+echo "\n";
 echo $mobile = $_POST['mobile'];
 
 //echo "Mobile: ".$mobile."| Email: " $email;
@@ -42,7 +42,7 @@ curl_close($curl);
 $server_obj = json_decode( $server_token );
 
 echo "Server token : ".$server_obj->access_token; 
-echo "<br/>";
+echo "\n";
 
 // Calling token for Client_access EP to use it into Consent. 
 
