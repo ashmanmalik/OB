@@ -1,6 +1,6 @@
 {
   "functions": {
-    "t2228.php": { 
+    "api/t2228.php": { 
       "runtime": "vercel-php@0.4.0"
     },
     "api/index.php": {
