@@ -4,13 +4,14 @@
 header('content-type: application/json');
 echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 
-var_dump($_POST);
+// var_dump($_POST);
 // Definining Variable for Now to Check. 
 // Validation needs to be added soon. 
-$mobile = json_decode( $_POST['mobile'] );
-$email = json_decode( $_POST['name'] );
+$data = json_decode( $_POST );
+var_dump($data);
+//$email = json_decode( $_POST['name'] );
 
-echo "Mobile: ".$mobile."| Email: " $email;
+//echo "Mobile: ".$mobile."| Email: " $email;
 
 // Calling Token EP  once when a request is made. 
 
@@ -70,7 +71,7 @@ curl_close($curl);
 $client_obj = json_decode( $server_token );
 
 
-echo "client token : ".$server_obj->access_token;
+echo "client token : ".$client_obj->access_token;
 
 
 // Calling user EP to generate a user using token. 
