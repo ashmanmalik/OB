@@ -4,7 +4,13 @@
 header('content-type: application/json');
 echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 
-var_dump($_POST);
+//var_dump($_POST);
+// Definining Variable for Now to Check. 
+// Validation needs to be added soon. 
+$mobile = $_POST['mobile'];
+$email = $_POST['name'];
+
+echo "Mobile: ".$mobile."| Email: " $email;
 
 // Calling Token EP  once when a request is made. 
 
@@ -33,8 +39,8 @@ curl_close($curl);
 
 
 $server_obj = json_decode( $server_token );
-var_dump($server_obj);
-//echo "Server token : ".$server_obj['access_token']; 
+
+echo "Server token : ".$server_obj->access_token; 
 
 // Calling token for Client_access EP to use it into Consent. 
 
@@ -60,16 +66,16 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $client_token = curl_exec($curl);
 curl_close($curl);
-//var_dump($client_token);
 
 $client_obj = json_decode( $server_token );
 
-var_dump($client_obj);
 
 echo "client token : ".$server_obj->access_token;
 
 
 // Calling user EP to generate a user using token. 
+
+
 
 // ... 
 
