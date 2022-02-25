@@ -50,20 +50,21 @@ echo "\n";
 
 // Calling user EP to generate a user using token. 
 
+
 $url = "https://au-api.basiq.io/users";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
 $headers = array(
    "Authorization: Bearer {$server_obj->access_token}",
-   "Accept: application/json",
    "Content-Type: application/json",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$data = `{"email": `.$email.`,"phone": `.$mobile.`}`;
+$data = '{"email": "$email", "phone": "$mobile"}';
 
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
@@ -73,11 +74,8 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $resp = curl_exec($curl);
 curl_close($curl);
+var_dump($resp);
 
-$server_obj = json_decode( $resp );
-
-var_dump($server_obj);
-echo "\n"; 
 
 
 // Calling token for Client_access EP to use it into Consent. 
