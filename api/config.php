@@ -64,7 +64,7 @@ $headers = array(
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$data = '{"email": "$email", "phone": "$mobile"}';
+$data = '{"email": '.json_encode($email).', "phone": '.json_encode($mobile).'}';
 
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
