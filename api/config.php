@@ -118,10 +118,6 @@ $statement = $db->prepare('INSERT INTO "cipher" ("user", "token", "time") VALUES
 $statement->bindValue(':time', date('Y-m-d H:i:s'));
 $statement->execute();
 
-$visits = $db->querySingle('SELECT user, token FROM "cipher"');
-
-var_dump($visits);
-echo("value: $visits");
 
 $db->close();
 
