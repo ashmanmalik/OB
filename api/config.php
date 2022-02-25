@@ -41,7 +41,39 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
+echo $server_obj->access_token; 
 echo "\n";
+
+echo "\n";
+echo "\n";
+echo "\n";
+
+// Calling user EP to generate a user using token. 
+
+$url = "https://au-api.basiq.io/users";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$headers = array(
+   "Authorization: Bearer {$server_obj->access_token}",
+   "Accept: application/json",
+   "Content-Type: application/json",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = '{"email": '.$email.',"phone": '.$mobile.'}';
+
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+var_dump($resp);
 
 // Calling token for Client_access EP to use it into Consent. 
 
@@ -78,36 +110,9 @@ echo "\n";
 echo "\n";
 echo "\n";
 
-// Calling user EP to generate a user using token. 
-
-$url = "https://au-api.basiq.io/users";
-
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-$headers = array(
-   "Authorization: Bearer {$server_obj->access_token}",
-   "Accept: application/json",
-   "Content-Type: application/json",
-);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-$data = '{"email": '.$email.',"phone": '.$mobile.'}';
-
-curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-//for debug only!
-curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-
-$resp = curl_exec($curl);
-curl_close($curl);
-var_dump($resp);
-
-var_dump($headers);
 
 // ... 
+
 
 // .. Redirecting the user to Consent.basiq.io 
 // .. Redirecting back to index.html for now .. 
