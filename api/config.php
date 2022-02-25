@@ -5,9 +5,8 @@ session_start();
 //echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 ob_start(); 
 // Validation needs to be added soon. 
-echo $email = $_POST['email'];
-echo "\n";
-echo $mobile = $_POST['mobile'];
+ $email = $_POST['email'];
+ $mobile = $_POST['mobile'];
 
 //echo "Mobile: ".$mobile."| Email: " $email;
 
@@ -37,9 +36,7 @@ $server_token = curl_exec($curl);
 curl_close($curl);
 
 $server_obj = json_decode( $server_token );
-echo "\n";
-echo $server_obj->access_token; 
-echo "\n";
+//$server_obj->access_token; 
 
 // Calling user EP to generate a user using token. 
 
@@ -69,10 +66,6 @@ $resp = curl_exec($curl);
 curl_close($curl);
 $user_object = json_decode( $resp );
 
-echo "\n";
-echo $user_object->id; 
-echo "\n"; 
-
 // Calling token for Client_access EP to use it into Consent. 
 
 $url2 = "https://au-api.basiq.io/token";
@@ -99,7 +92,7 @@ curl_close($curl11);
 
 $client_obj = json_decode( $client_token );
 
-echo "client token : ".$client_obj->access_token;
+//echo "client token : ".$client_obj->access_token;
 
 // Session storage beigns
 
