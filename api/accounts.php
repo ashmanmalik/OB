@@ -12,13 +12,12 @@
 
 <style>
 .container {
-  height: 200px;
+  height: 500px;
   position: relative;
-  border: 3px solid green;
 }
 
 .vertical-center {
-  margin: 0;
+  margin: 0px auto;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
