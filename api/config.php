@@ -16,7 +16,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $headers = array(
    "Content-Type: application/x-www-form-urlencoded",
    "basiq-version: 2.1",
-   "Authorization: Basic OTgzMGZhNmMtYjIyMi00ZDg2LWJhMjYtNjkyZjEwNDI2ZjQ4OmJhN2ZmMzNlLTBiYmUtNGEzMC1iMWUzLWFiNGJjODQ4ZTczNg==",
+   "Authorization: Basic OTgzMGZhNmMtYjIyMi00ZDg2LWJhMjYtNjkyZjEwNDI2ZjQ4Ojc0OTE5YWJlLWM2MDktNDJmNi04YzBhLWRjMzE5ZDA5Zjk0Nw==",
    "Content-Length: 0",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
