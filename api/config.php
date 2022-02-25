@@ -1,8 +1,8 @@
 <?php 
 
 
-header('content-type: application/json');
-echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
+//header('content-type: application/json');
+//echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 
 $_mo =  $_POST['mobile']; 
 $_email = $_POST['email'];
@@ -15,7 +15,6 @@ if ($_mo == "" || $_email == "") {
 	echo $_m; 
 	echo " "; 
 	echo $_email;
-
 }
 
 ?>
