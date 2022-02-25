@@ -113,6 +113,8 @@ $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token
 
 header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
 
+header('location: '.$redirect_url.'');
+
 ob_end_flush(); 
 
 ?>
