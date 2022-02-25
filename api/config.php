@@ -73,42 +73,45 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $resp = curl_exec($curl);
 curl_close($curl);
-var_dump($resp);
+
+$server_obj = json_decode( $resp );
+
+var_dump($server_obj);
 
 // Calling token for Client_access EP to use it into Consent. 
 
-$url = "https://au-api.basiq.io/token";
+// $url = "https://au-api.basiq.io/token";
 
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+// $curl = curl_init($url);
+// curl_setopt($curl, CURLOPT_URL, $url);
+// curl_setopt($curl, CURLOPT_POST, true);
+// curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-$headers = array(
-   "Content-Type: application/x-www-form-urlencoded",
-   "basiq-version: 3.0",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA==",
-   "Content-Length: 0",
-);
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-$data = '{"scope": "CLIENT_ACCESS"}';
-curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-//for debug only!
-curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+// $headers = array(
+//    "Content-Type: application/x-www-form-urlencoded",
+//    "basiq-version: 3.0",
+//    "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA==",
+//    "Content-Length: 0",
+// );
+// curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+// $data = '{"scope": "CLIENT_ACCESS"}';
+// curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+// //for debug only!
+// curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+// curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-$client_token = curl_exec($curl);
-curl_close($curl);
+// $client_token = curl_exec($curl);
+// curl_close($curl);
 
-$client_obj = json_decode( $server_token );
+// $client_obj = json_decode( $server_token );
 
 
-echo "client token : ".$client_obj->access_token;
+// echo "client token : ".$client_obj->access_token;
 
-echo "\n";
-echo "\n";
-echo "\n";
-echo "\n";
+// echo "\n";
+// echo "\n";
+// echo "\n";
+// echo "\n";
 
 
 // ... 
