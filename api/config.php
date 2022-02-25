@@ -110,27 +110,12 @@ $client_obj = json_decode( $client_token );
 
 echo "client token : ".$client_obj->access_token;
 
-?>
 
-<script>
-    window.location.href = 'https://consent.basiq.io/home?userId=' + <?php echo $user_object->id; ?> + '&token=' + <?php echo $client_obj->access_token; ?>;
-</script>
+$redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
-<?php
+echo $redirect_url; 
 
-// echo "\n";
-// echo "\n";
-// echo "\n";
-// echo "\n";
-
-
-
-
-// .. Redirecting the user to Consent.basiq.io 
-// .. Redirecting back to index.html for now .. 
-// .. Update the user accounts // 
-// .. update the user transactions using Pagination.. 
-
+header("location: ".$redirect_url. "");
 
 
 ?>
