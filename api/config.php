@@ -40,7 +40,7 @@ curl_close($curl);
 
 
 $server_obj = json_decode( $server_token );
-
+echo "\n";
 echo $server_obj->access_token; 
 echo "\n";
 
