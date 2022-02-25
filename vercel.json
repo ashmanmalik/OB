@@ -8,6 +8,9 @@
     },
     "api/accounts.php": {
       "runtime": "vercel-php@0.4.0"
+    },
+    "api/accountspage.php": {
+      "runtime": "vercel-php@0.4.0"
     }
   }
 }

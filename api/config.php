@@ -4,6 +4,7 @@
 //header('content-type: application/json');
 //echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 ob_start(); 
+session_start();
 // Validation needs to be added soon. 
 echo $email = $_POST['email'];
 echo "\n";
@@ -100,6 +101,9 @@ curl_close($curl11);
 $client_obj = json_decode( $client_token );
 
 echo "client token : ".$client_obj->access_token;
+
+$_SESSION["token"] = $server_obj->access_token;
+$_SESSION["user"] = $user_object->id;
 
 
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 

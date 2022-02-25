@@ -29,7 +29,7 @@
   <div class="vertical-center">
 	  <button onclick="window.location='https://consent.basiq.io/home'" type="submit" class="btn btn-primary">Connect Another Bank Account</button>
 	  <p>&nbsp;</p>
-	  <button type="submit" class="btn btn-success">I have disclosed All Accounts</button>    
+	  <button onclick="window.location='accountspage.php'" type="submit" class="btn btn-success">I have disclosed All Accounts</button>    
   </div>
 </div>
 
