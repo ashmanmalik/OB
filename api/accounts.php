@@ -10,11 +10,29 @@
 </head>
 <body>
 
+<style>
+.container {
+  height: 200px;
+  position: relative;
+  border: 3px solid green;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+</style>
+
 <div class="container">
-    
-  <button type="submit" class="btn btn-primary">Connect Another Bank Account</button>
-  <p>&nbsp;</p>
-  <button type="submit" class="btn btn-success">I have disclosed All Accounts</button>
+  <div class="vertical-center">
+	  <button onclick="window.location='https://consent.basiq.io/home'" type="submit" class="btn btn-primary">Connect Another Bank Account</button>
+	  <p>&nbsp;</p>
+	  <button type="submit" class="btn btn-success">I have disclosed All Accounts</button>    
+  </div>
+</div>
 
 </body>
 </html>
