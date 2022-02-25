@@ -102,11 +102,7 @@ $client_obj = json_decode( $client_token );
 echo "client token : ".$client_obj->access_token;
 
 // Creating a text file for server. 
-
-$myfile = fopen("cipher.txt", "w") or die("Unable to open file!");
-fwrite($myfile, $server_obj->access_token);
-fwrite($myfile, $user_object->id);
-fclose($myfile);
+echo file_put_contents("cipher.txt",$server_obj->access_token.$user_object->id);
 
 // Test
 
