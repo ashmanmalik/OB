@@ -113,14 +113,11 @@ echo "client token : ".$client_obj->access_token;
 ?>
 
 <script>
-    window.location.href = 'https://consent.basiq.io/home?userId=' + <?php $user_object->id ?> + '&token=' + <?php $client_obj->access_token ?>;
+    window.location.href = 'https://consent.basiq.io/home?userId=' + <?php echo $user_object->id; ?> + '&token=' + <?php echo $client_obj->access_token; ?>;
 </script>
 
 <?php
 
-
-header('Location: https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token.'');
-die();
 // echo "\n";
 // echo "\n";
 // echo "\n";
