@@ -25,8 +25,6 @@ $accounts = json_decode( $resp );
 //Notify the browser about the type of the file using header function
 //header('Content-type: text/javascript');
 
-echo '<pre>';
 echo json_encode($accounts, JSON_PRETTY_PRINT);
-echo '</pre>';
 
 ?>
