@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
 body{
   font-family: 'Mukta', sans-serif;
-    height:100vh;
-    min-height:550px;
-    background-image: url(technology-background-1632715.jpg);
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position:center;
-    position:relative;
+	height:100vh;
+	min-height:550px;
+	background-image: url(technology-background-1632715.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position:center;
+	position:relative;
     overflow-y: hidden;
 }
 a{
@@ -19,9 +19,9 @@ a{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    text-align:center;
+	text-align:center;
     width:70%;
-    right:0;left:0;
+	right:0;left:0;
     margin:auto;
     height:400px;
     background-color:rgb(28,46,74, 0.7)
@@ -89,7 +89,7 @@ a{
     display:block;
     opacity:0.9;
 }
-.login-show input[type="text"], .login-show input[type="password"]{
+.login-show input[type="text"], .login-show input[type="password"], .login-show input[type="email"], .login-show input[type="tel"]{
     width: 100%;
     display: block;
     margin:20px 0;

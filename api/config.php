@@ -6,7 +6,8 @@ session_start();
 ob_start(); 
 // Validation needs to be added soon. 
  $email = $_POST['email'];
- $mobile = $_POST['mobile'];
+ $mobile = "+".$_POST['mobile'];
+
 
 //echo "Mobile: ".$mobile."| Email: " $email;
 
@@ -54,7 +55,7 @@ $headers = array(
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 
-$data = '{"email": '.json_encode($email).', "phone": '.json_encode($mobile).'}';
+$data = '{"email": '.json_encode($email).', "mobile": '.json_encode($mobile).'}';
 
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 
