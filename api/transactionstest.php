@@ -79,7 +79,6 @@ tfoot td {
   data-check-on-init="true"> 
     <thead>
       <tr>
-        <th> Date </th>
         <th> Description </th>
         <th> status </th>
         <th> amount </th>
@@ -108,7 +107,6 @@ tfoot td {
 				//$count += $final; 
 	            $krr = explode('T', $item["postDate"]);
              ?>
-          <td><?PHP echo $krr[0]; ?></td>
           <td><?PHP echo $item["description"]; ?></td>
           <td><?PHP echo $item["status"]; ?></td>
           <td><?PHP echo $item["amount"]; ?></td>
@@ -135,7 +133,7 @@ tfoot td {
 			"footerCallback": function ( row, data, start, end, display ) {
 				var api = this.api();
 				nb_cols = api.columns().nodes().length;
-				var j = 5;
+				var j = 3;
 				while(j < nb_cols){
 					var pageTotal = api
                 .column( j, { page: 'current'} )
