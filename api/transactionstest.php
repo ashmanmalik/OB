@@ -74,6 +74,7 @@ $accounts = json_decode( $resp );
         <th> status </th>
         <th> amount </th>
         <th> balance </th>
+        <th> RoundUps </th>
       </tr>
     </thead>
     <tbody>
@@ -82,13 +83,17 @@ $accounts = json_decode( $resp );
       ?>
         <tr>
             <?php 
-                    $krr = explode('T', $item["postDate"]);
+	 		    $count = 0; 
+				$final = round($item["balance"]) - $total;
+				$count += $final; 
+	            $krr = explode('T', $item["postDate"]);
              ?>
           <td><?PHP echo $krr[0]; ?></td>
           <td><?PHP echo $item["description"]; ?></td>
           <td><?PHP echo $item["status"]; ?></td>
           <td><?PHP echo $item["amount"]; ?></td>
           <td><?PHP echo $item["balance"]; ?></td>
+          <td><?PHP echo $count; ?></td>
           
         </tr>
       <?php endforeach; ?>
