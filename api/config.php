@@ -105,6 +105,12 @@ $_SESSION["user"] = $user_object->id;
 
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
+$content = "some text here";
+$fp = fopen($_SERVER['DOCUMENT_ROOT'] . "/myText.txt","wb");
+fwrite($fp,$content);
+fclose($fp);
+
+
 header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
 sleep(3);
 $response = new stdClass;
