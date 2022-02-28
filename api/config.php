@@ -118,10 +118,10 @@ $tokens = $db->query('SELECT token FROM "tokens"');
 
 //echo("User visits: $visits");
 var_dump($tokens);
+//exit;
+$db->close();
+
 exit;
-//$db->close();
-
-
 // Session storage ends
 
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
