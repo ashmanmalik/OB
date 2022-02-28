@@ -5,10 +5,11 @@ session_start();
 //echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 ob_start(); 
 // Validation needs to be added soon. 
- $email = $_POST['email'];
- $mobile = "+".$_POST['mobile'];
+ //$email = $_POST['email'];
+ //$mobile = "+".$_POST['mobile'];
 
-
+ $email = "ashman.malik@outlook.com"; 
+ $mobile = "+61452626178";
 //echo "Mobile: ".$mobile."| Email: " $email;
 
 // Calling Token EP  once when a request is made. 
@@ -97,9 +98,9 @@ $client_obj = json_decode( $client_token );
 
 // Session storage beigns
 
-$_SESSION["server_access_token"] = $server_obj->access_token;
-$_SESSION["client_access_token"] = $client_obj->access_token;
-$_SESSION["user"] = $user_object->id;
+//$_SESSION["server_access_token"] = $server_obj->access_token;
+//$_SESSION["client_access_token"] = $client_obj->access_token;
+//$_SESSION["user"] = $user_object->id;
 
 
 $db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
@@ -113,7 +114,7 @@ $statement = $db->prepare('INSERT INTO "tokens" ("token") VALUES (:token)');
 $statement->bindValue(':token', $server_obj->access_token);
 $statement->execute();
 
-$tokens = $db->querySingle('SELECT * FROM "tokens"');
+$tokens = $db->query('SELECT * FROM "tokens"');
 
 //echo("User visits: $visits");
 var_dump($tokens);
