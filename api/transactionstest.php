@@ -123,7 +123,7 @@ tfoot td {
 	            $krr = explode('T', $item["postDate"]);
              ?>
           <td><?PHP echo $item["description"]; ?></td>
-          <td><?PHP echo $krr; ?></td>
+          <td><?PHP echo $krr[0]; ?></td>
           <td><?PHP echo $item["amount"]; ?></td>
           <td><?PHP echo $item["balance"]; ?></td>
           <td><?PHP echo round($final, 2, PHP_ROUND_HALF_UP); ?></td>
