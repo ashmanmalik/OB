@@ -166,7 +166,6 @@ $(document).ready(function() {
  
     // DataTables initialisation
     var table = $('#myTable').DataTable(
-    		$('#myTable').DataTable(
 		{
 			"paging": false,
 			"autoWidth": true,
