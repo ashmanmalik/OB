@@ -68,7 +68,6 @@ tfoot td {
 
 <div class="container">
   <h2> <button onclick="window.location='accountspage.php'" type="submit" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back </button> Transactions <i class="fa fa-university" aria-hidden="true"></i></h2>
-  <p> Congratulations! Below are all your transactions </p>            
  
   
 <table
@@ -97,27 +96,7 @@ tfoot td {
 			<td></td>
 		</tr>
 	</tfoot>
-    <tbody>
-      <?php foreach($transaction_data as $key => $item): 
-      
-      ?>
-        <tr>
-            <?php 
-	 		    $count = 0;
 
-	 		    $final = ceil(round($item["balance"], 2)) - round($item["balance"], 2); 
-				//$count += $final; 
-	            $krr = explode('T', $item["postDate"]);
-             ?>
-          <td><?PHP echo $item["description"]; ?></td>
-          <td><?PHP echo $item["status"]; ?></td>
-          <td><?PHP echo $item["amount"]; ?></td>
-          <td><?PHP echo $item["balance"]; ?></td>
-          <td><?PHP echo round($final, 2, PHP_ROUND_HALF_UP); ?></td>
-          
-        </tr>
-      <?php endforeach; ?>
-    </tbody>
   </table>
 </div>
 <script>
