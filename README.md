@@ -1,10 +1,9 @@
-# OB
-# Integrating PHP with BASIQ API to Round up Transactions and Iterate Investment Options 
-# Languages used: PHP, HTML5, AJAX, JQUERY 
-# Libraries: Node Package Manager (NPM) & Bootstrap
-# Author: Ashman Malik
+# OB - Integrating PHP with BASIQ API to Round up Transactions and Iterate Investment Options 
+Languages used: PHP, HTML5, AJAX, JQUERY 
+Libraries: Node Package Manager (NPM) & Bootstrap
+Author: Ashman Malik
 
-How to use this project? 
+# How to use this project? 
 
 Simply download the project and change your API key under /API/config.php 
 
