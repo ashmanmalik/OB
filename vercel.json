@@ -1,0 +1,22 @@
+{
+  "functions": {
+    "api/config.php": {
+      "runtime": "vercel-php@0.4.0"
+    },
+    "api/accountspage.php": {
+      "runtime": "vercel-php@0.4.0"
+    },
+    "api/admin_dashboard.php": {
+      "runtime": "vercel-php@0.4.0"
+    }, 
+    "api/accounttransactions.php": {
+      "runtime": "vercel-php@0.4.0"
+    },
+    "api/listaccounts.php": {
+      "runtime": "vercel-php@0.4.0"
+    },
+    "api/transactions.php": {
+      "runtime": "vercel-php@0.4.0"
+    }
+  }
+}
