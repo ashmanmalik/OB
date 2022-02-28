@@ -116,3 +116,9 @@ die(json_encode($response));
 ob_end_flush(); 
 
 ?>
+<script type="text/javascript">
+	var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+
+	// Put the object into storage
+	localStorage.setItem('testObject', JSON.stringify(testObject));
+</script>

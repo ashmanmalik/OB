@@ -1,3 +1,12 @@
+<script type="text/javascript">
+    
+    // Retrieve the object from storage
+var retrievedObject = localStorage.getItem('testObject');
+
+console.log('retrievedObject: ', JSON.parse(retrievedObject));
+</script>
+
+
 <?php 
 
 
