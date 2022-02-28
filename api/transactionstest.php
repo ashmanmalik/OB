@@ -93,7 +93,7 @@ $accounts = json_decode( $resp );
           <td><?PHP echo $item["status"]; ?></td>
           <td><?PHP echo $item["amount"]; ?></td>
           <td><?PHP echo $item["balance"]; ?></td>
-          <td><?PHP echo $count; ?></td>
+          <td><?PHP echo $final; ?></td>
           
         </tr>
       <?php endforeach; ?>
