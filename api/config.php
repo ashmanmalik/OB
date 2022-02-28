@@ -111,13 +111,15 @@ $db->query('CREATE TABLE IF NOT EXISTS "tokens" (
 )');
 
 $statement = $db->prepare('INSERT INTO "tokens" ("token") VALUES (:token)');
-$statement->bindValue(':token', $server_obj->access_token);
+$statement->bindParam(':token', $server_obj->access_token);
 $statement->execute();
 
 $tokens = $db->query('SELECT token FROM "tokens"');
 
 //echo("User visits: $visits");
 var_dump($tokens);
+echo ($tokens);
+
 //exit;
 $db->close();
 
