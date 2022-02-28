@@ -84,11 +84,8 @@ $accounts = json_decode( $resp );
         <tr>
             <?php 
 	 		    $count = 0;
-	 		    function round_up ( $value, $precision ) { 
-				    $pow = pow ( 10, $precision ); 
-				    return ( ceil ( $pow * $value ) + ceil ( $pow * $value - ceil ( $pow * $value ) ) ) / $pow; 
-				} 
-	 		    //$final = ceil(round($item["balance"], 2)) - round($item["balance"], 2); 
+
+	 		    $final = ceil(round($item["balance"], 2)) - round($item["balance"], 2); 
 				//$count += $final; 
 	            $krr = explode('T', $item["postDate"]);
              ?>
@@ -97,7 +94,7 @@ $accounts = json_decode( $resp );
           <td><?PHP echo $item["status"]; ?></td>
           <td><?PHP echo $item["amount"]; ?></td>
           <td><?PHP echo $item["balance"]; ?></td>
-          <td><?PHP echo $round_up($item["balance"], 2); ?></td>
+          <td><?PHP echo round($final, 2, PHP_ROUND_HALF_UP); ?></td>
           
         </tr>
       <?php endforeach; ?>
