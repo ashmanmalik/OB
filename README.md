@@ -1,4 +1,4 @@
-# OB - Integrating PHP with BASIQ API to Round up Transactions and Iterate Investment Options 
+# OB - Integrating PHP with BASIQ API to Round up Transactions and Donate it using Stripe
 
 Languages used: PHP, HTML5, AJAX, JQUERY 
 
