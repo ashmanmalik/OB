@@ -135,7 +135,7 @@ tfoot td {
 			"footerCallback": function ( row, data, start, end, display ) {
 				var api = this.api();
 				nb_cols = api.columns().nodes().length;
-				var j = 4;
+				var j = 5;
 				while(j < nb_cols){
 					var pageTotal = api
                 .column( j, { page: 'current'} )
