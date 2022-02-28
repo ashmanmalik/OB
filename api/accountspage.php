@@ -1,14 +1,14 @@
-<script type="text/javascript">
-    
-    // Retrieve the object from storage
-var retrievedObject = localStorage.getItem('testObject');
-
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-</script>
-
 
 <?php 
 
+
+$db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_READWRITE);
+
+$tokens = $db->query('SELECT token FROM "tokens"');
+$row = $tokens->fetchArray() ;
+echo json_encode($row["token"]) ;
+
+exit;
 
 session_start();
 

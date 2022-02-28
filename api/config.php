@@ -116,16 +116,15 @@ $statement->execute();
 
 
 $tokens = $db->query('SELECT token FROM "tokens"');
-
 $row = $tokens->fetchArray() ;
-echo json_encode($row) ;
+echo json_encode($row["token"]) ;
 // or echo $row['creation_time'] ;
 // or print_r($row) ;
 //echo("User visits: $visits");
 
 
 //exit;
-$db->close();
+//$db->close();
 
 exit;
 // Session storage ends
