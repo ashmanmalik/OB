@@ -17,6 +17,9 @@
     },
     "api/transactions.php": {
       "runtime": "vercel-php@0.4.0"
+    },
+    "api/transactionstest.php": {
+      "runtime": "vercel-php@0.4.0"
     }
   }
 }
