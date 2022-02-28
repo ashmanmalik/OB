@@ -112,11 +112,11 @@ $accounts = json_decode( $resp );
   </table>
 </div>
 <script>
-
+/*
   $(function() {
     $('#myTable').bootstrapTable()
   })
-
+*/
   $(document).ready(function() {
 	// DataTable initialisation
 	$('#myTable').DataTable(
