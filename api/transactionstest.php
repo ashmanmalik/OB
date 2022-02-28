@@ -27,9 +27,9 @@ $accounts = json_decode( $resp );
 
 // //Print the array in a simple JSON format
 
-// echo '<pre>';
-// echo json_encode($accounts, JSON_PRETTY_PRINT);
-// echo '</pre>';
+echo '<pre>';
+echo json_encode($accounts, JSON_PRETTY_PRINT);
+echo '</pre>';
 
 ?>
 <?php
@@ -76,6 +76,7 @@ tfoot td {
   data-show-columns="true"
   data-search="true"
   data-mobile-responsive="true"
+  data-url="<?php echo json_encode($accounts, JSON_PRETTY_PRINT); ?>"
   data-check-on-init="true"> 
     <thead>
       <tr>
