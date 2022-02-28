@@ -83,8 +83,8 @@ $accounts = json_decode( $resp );
       ?>
         <tr>
             <?php 
-	 		    $count = 0; 
-				$final = round($item["balance"], 2);
+	 		    $count = 0;
+	 		    $final = ceil(round($item["balance"], 2)) - round($item["balance"], 2); 
 				//$count += $final; 
 	            $krr = explode('T', $item["postDate"]);
              ?>
