@@ -123,6 +123,9 @@ $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token
 
 $_SESSION['data'] = $user_object->id;
 
+echo '<script> sessionStorage.setItem("data", "' . $_SESSION['data'] . '");</script>';
+
+
 
 
 header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
@@ -131,12 +134,6 @@ $response = new stdClass;
 $response->status = "success";
 $response->url = $redirect_url;
 die(json_encode($response));
-
-echo '<script> sessionStorage.setItem("data", "' . $_SESSION['data'] . '");</script>';
-
-//Display 'data'.
-echo '<script> alert(sessionStorage.getItem("data")); </script>';
-
 
 ob_end_flush(); 
 
