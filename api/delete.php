@@ -2,6 +2,8 @@
 
 header("location: admin_dashboard.php");
 
+// Not using this anymore...
+
 // $url = "https://au-api.basiq.io/users/".$_GET["userid"]."";
 
 // $curl = curl_init($url);

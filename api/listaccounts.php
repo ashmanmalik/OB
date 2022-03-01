@@ -22,9 +22,6 @@ curl_close($curl);
 
 $accounts = json_decode( $resp );
 
-//Notify the browser about the type of the file using header function
-//header('Content-type: text/javascript');
-
 // //Print the array in a simple JSON format
 // echo '<pre>';
 // echo json_encode($accounts, JSON_PRETTY_PRINT);

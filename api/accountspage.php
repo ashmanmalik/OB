@@ -1,6 +1,5 @@
 <?php 
 
-
 session_start();
 
 $cltkn = $_SESSION["client_access_token"];
@@ -10,14 +9,10 @@ $usr = $_SESSION["user"];
 // Call Accounts API and populate the lists below ...
 
 $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn;
-
- $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
- $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
-
-
+$svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
+$trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,15 +55,8 @@ $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn;
                                 <div class="d-flex align-items-center">
                                     <a href="<?php echo $trv_url; ?>"><i class="fa fa-th-list"></i> Transactions</a>
                                 </div>
-                            
-                                
-                            
-                            
-                            </form>
-                            
+                            </form>                            
                         </div>
-                        
-                        
                         <div class="card-footer py-3 border-0">
                             <div class="text-center">
                                 <a href="../index.html"><i class="fa fa-home"></i> I have disclosed All my accounts </a>

@@ -1,24 +1,20 @@
 <?php 
 
 session_start();
-//header('content-type: application/json');
-//echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
 ob_start(); 
-// Validation needs to be added soon. 
- $email = $_POST['email'];
- $mobile = "+".$_POST['mobile'];
-
-
-//echo "Mobile: ".$mobile."| Email: " $email;
+// Validation needs to be added at some point here. (Server side Scripting)
+$email = $_POST['email'];
+$mobile = "+".$_POST['mobile'];
 
 // Calling Token EP  once when a request is made. 
-
 $url = "https://au-api.basiq.io/token";
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+// Need to Store the API key in the database. 
 
 $headers = array(
    "Content-Type: application/x-www-form-urlencoded",
@@ -29,6 +25,7 @@ $headers = array(
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 $data = '{"scope": "SERVER_ACCESS"}';
 curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
 //for debug only!
 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -37,10 +34,8 @@ $server_token = curl_exec($curl);
 curl_close($curl);
 
 $server_obj = json_decode( $server_token );
-//$server_obj->access_token; 
 
 // Calling user EP to generate a user using token. 
-
 
 $url = "https://au-api.basiq.io/users";
 
@@ -101,7 +96,29 @@ $_SESSION["server_access_token"] = $server_obj->access_token;
 $_SESSION["client_access_token"] = $client_obj->access_token;
 $_SESSION["user"] = $user_object->id;
 
-// Session storage ends
+
+// $db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
+
+// $db->query('CREATE TABLE IF NOT EXISTS "tokens" (
+//     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+//     "token" VARCHAR
+// )');
+
+// $statement = $db->prepare('INSERT INTO "tokens" ("token") VALUES (:token)');
+// $statement->bindValue(':token', $server_obj->access_token);
+// $statement->execute();
+
+
+// $tokens = $db->query('SELECT token FROM "tokens"');
+// $row = $tokens->fetchArray() ;
+// echo json_encode($row["token"]) ;
+// // or echo $row['creation_time'] ;
+// // or print_r($row) ;
+// //echo("User visits: $visits");
+
+
+// //exit;
+// //$db->close();
 
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 

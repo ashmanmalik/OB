@@ -22,9 +22,6 @@ curl_close($curl);
 
 $accounts = json_decode( $resp );
 
-// //Notify the browser about the type of the file using header function
-// //header('Content-type: text/javascript');
-
 // //Print the array in a simple JSON format
 
 // echo '<pre>';
@@ -77,9 +74,7 @@ $accounts = json_decode( $resp );
       </tr>
     </thead>
     <tbody>
-      <?php foreach($transaction_data as $key => $item): 
-      
-      ?>
+      <?php foreach($transaction_data as $key => $item): ?>
         <tr>
             <?php 
                     $krr = explode('T', $item["postDate"]);

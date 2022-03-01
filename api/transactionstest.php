@@ -22,9 +22,6 @@ curl_close($curl);
 
 $accounts = json_decode( $resp );
 
-// //Notify the browser about the type of the file using header function
-// //header('Content-type: text/javascript');
-
 // //Print the array in a simple JSON format
 
 // echo '<pre>';
@@ -120,11 +117,6 @@ tfoot td {
   </table>
 </div>
 <script>
-/*
-  $(function() {
-    $('#myTable').bootstrapTable()
-  })
-*/
   $(document).ready(function() {
 	// DataTable initialisation
 	$('#myTable').DataTable(
