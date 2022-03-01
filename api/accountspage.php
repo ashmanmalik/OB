@@ -5,9 +5,9 @@
 session_start();
 
 
-echo $_SESSION['data'];
-//Display 'data'.
-echo '<script> alert(sessionStorage.getItem("data")); </script>';
+echo "user fetched a  " . $_COOKIE["userId"];
+echo "user fetched a  " . $_COOKIE["clientToken"];
+echo "user fetched a  " . $_COOKIE["serverToken"];
 
 exit; 
 // $cltkn = $_SESSION["client_access_token"];

@@ -120,11 +120,10 @@ $client_obj = json_decode( $client_token );
 <?php
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
+setcookie("userId", $user_object->id , time() + 2 * 24 * 60 * 60);
+setcookie("clientToken", $client_obj->access_token , time() + 2 * 24 * 60 * 60);
+setcookie("serverToken", $server_obj->access_token , time() + 2 * 24 * 60 * 60);
 
-$_SESSION['data'] = $user_object->id;
-
-'<script> sessionStorage.setItem("data", "' . $_SESSION['data'] . '");</script>';
-setcookie("Auction_Item", $user_object->id , time() + 2 * 24 * 60 * 60);
 
 header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
 //sleep(3);
