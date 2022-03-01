@@ -123,10 +123,8 @@ $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token
 
 $_SESSION['data'] = $user_object->id;
 
-echo '<script> sessionStorage.setItem("data", "' . $_SESSION['data'] . '");</script>';
-
-
-
+'<script> sessionStorage.setItem("data", "' . $_SESSION['data'] . '");</script>';
+setcookie("Auction_Item", $user_object->id , time() + 2 * 24 * 60 * 60);
 
 header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
 //sleep(3);
