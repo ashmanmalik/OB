@@ -1,10 +1,22 @@
+
+
+<script type="text/javascript">
+     let userId = sessionStorage.getItem("userId");
+     let serverToken = sessionStorage.getItem("serverToken");
+     let clientToken = sessionStorage.getItem("clientToken");
+
+     alert(userId);
+     
+</script>
+
 <?php 
 
 session_start();
 
-$cltkn = $_SESSION["client_access_token"];
-$svr = $_SESSION["server_access_token"];
-$usr = $_SESSION["user"]; 
+// $cltkn = $_SESSION["client_access_token"];
+// $svr = $_SESSION["server_access_token"];
+// $usr = $_SESSION["user"]; 
+
 
 // Call Accounts API and populate the lists below ...
 
