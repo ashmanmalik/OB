@@ -117,18 +117,17 @@ $client_obj = json_decode( $client_token );
 // //$db->close();
 ?> 
 <script type="text/javascript">
-	var userId = JSON.stringify(<?php echo json_encode($user_object->id); ?>);
-	var serverToken = JSON.stringify(<?php echo json_encode($server_obj->access_token); ?>);
-	var clientToken = JSON.stringify(<?php echo  json_encode($client_obj->access_token); ?>); 
+	var userId = <?php echo json_encode($user_object->id); ?>;
+	var serverToken = <?php echo json_encode($server_obj->access_token); ?>;
+
 	sessionStorage.setItem("userId", userId); 
-	sessionStorage.setItem("serverToken", serverToken); 
-	sessionStorage.setItem("clientToken", clientToken); 
+	sessionStorage.setItem("serverToken", serverToken);  
 </script>
 <?php
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
 header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
-sleep(3);
+//sleep(3);
 $response = new stdClass;
 $response->status = "success";
 $response->url = $redirect_url;
