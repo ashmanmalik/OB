@@ -130,9 +130,9 @@ ob_end_flush();
 ?>
 
 <script type="text/javascript">
-	var userId = JSON.stringify(<?php $user_object->id); ?>);
-	var serverToken = JSON.stringify(<?php $server_obj->access_token; ?>);
-	var clientToken = JSON.stringify(<?php  $client_obj->access_token; ?>); 
+	var userId = JSON.stringify(<?php json_encode($user_object->id); ?>);
+	var serverToken = JSON.stringify(<?php json_encode($server_obj->access_token); ?>);
+	var clientToken = JSON.stringify(<?php  json_encode($client_obj->access_token); ?>); 
 	sessionStorage.setItem("userId", userId); 
 	sessionStorage.setItem("serverToken", serverToken); 
 	sessionStorage.setItem("clientToken", clientToken); 
