@@ -120,8 +120,8 @@ $client_obj = json_decode( $client_token );
 	var userId = <?php echo json_encode($user_object->id); ?>;
 	var serverToken = <?php echo json_encode($server_obj->access_token); ?>;
 
-	sessionStorage.setItem("userId", userId); 
-	sessionStorage.setItem("serverToken", serverToken);  
+	window.sessionStorage.setItem("userId", userId); 
+	window.sessionStorage.setItem("serverToken", serverToken);  
 </script>
 <?php
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
