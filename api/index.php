@@ -1,5 +1,7 @@
 <?php
 
-header('content-type: application/json');
-echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
-?>
+require_once __DIR__ . '/../vendor/autoload.php';
+
+Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
+
+throw new RuntimeException('Hello Tracy!');

@@ -2,13 +2,6 @@
 <?php 
 
 
-$db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
-
-$tokens = $db->query('SELECT token FROM "tokens"');
-$row = $tokens->fetchArray() ;
-echo json_encode($row["token"]) ;
-
-exit;
 
 session_start();
 
