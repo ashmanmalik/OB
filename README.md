@@ -11,3 +11,7 @@ Author: Ashman Malik
 Simply download the project and change your API key under /API/config.php 
 
 Enjoy your project. 
+
+# Video demonstration:
+
+https://youtu.be/Nmk-3u8my4A
