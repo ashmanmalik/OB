@@ -92,18 +92,6 @@ $client_obj = json_decode( $client_token );
 
 // Session storage beigns
 
-?>
-
-<script type="text/javascript">
-	var userId = <?php echo $user_object->id; ?>;
-	var serverToken = <?php echo $server_obj->access_token; ?>;
-	var clientToken = <?php echo $client_obj->access_token; ?>; 
-	sessionStorage.setItem("userId", userId); 
-	sessionStorage.setItem("serverToken", serverToken); 
-	sessionStorage.setItem("clientToken", clientToken); 
-</script>
-
-<?php
 
 // $db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
 
@@ -140,3 +128,12 @@ die(json_encode($response));
 ob_end_flush(); 
 
 ?>
+
+<script type="text/javascript">
+	var userId = JSON.stringify(<?php $user_object->id); ?>);
+	var serverToken = JSON.stringify(<?php $server_obj->access_token; ?>);
+	var clientToken = JSON.stringify(<?php  $client_obj->access_token; ?>); 
+	sessionStorage.setItem("userId", userId); 
+	sessionStorage.setItem("serverToken", serverToken); 
+	sessionStorage.setItem("clientToken", clientToken); 
+</script>
