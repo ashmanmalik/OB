@@ -2,18 +2,9 @@
 
 <?php 
 
-session_start();
-
-
-echo "user fetched a  " . $_COOKIE["userId"];
-echo "user fetched a  " . $_COOKIE["clientToken"];
-echo "user fetched a  " . $_COOKIE["serverToken"];
-
-exit; 
-// $cltkn = $_SESSION["client_access_token"];
-// $svr = $_SESSION["server_access_token"];
-// $usr = $_SESSION["user"]; 
-
+$cltkn = $_COOKIE["clientToken"];
+$svr = $_COOKIE["serverToken"];
+$usr = $_COOKIE["userId"]; 
 
 // Call Accounts API and populate the lists below ...
 
