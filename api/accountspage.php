@@ -1,12 +1,3 @@
-<script type="text/javascript">
-    
-    // Retrieve the object from storage
-var retrievedObject = localStorage.getItem('testObject');
-
-console.log('retrievedObject: ', JSON.parse(retrievedObject));
-</script>
-
-
 <?php 
 
 
@@ -21,7 +12,7 @@ $usr = $_SESSION["user"];
 $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn;
 
  $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
- $trv_url = "transactions.php?userId=".$usr."&token=".$svr;
+ $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
 
 
 
@@ -52,8 +43,7 @@ $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn;
             <div class="row justify-content-sm-center h-100">
                 <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
                      <div class="text-center my-5">
-                         
-                        <img src="https://ask.libreoffice.org/uploads/asklibo/original/3X/3/5/35664d063435f940bda4cb3bb31ea0a6c5fed2f4.gif" width="150" />
+                        <h2> Accounts & Transactions </h2>
                     </div>
                      <div class="card shadow-lg">
                         <div class="card-body p-5">

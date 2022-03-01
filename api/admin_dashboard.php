@@ -116,7 +116,7 @@ $users_bucket = $myObject["data"];
           <td><?PHP echo $item["email"]; ?></td>
           <td><?PHP echo $item["mobile"]; ?></td>
           <td><?PHP echo $item["createdTime"]; ?></td>
-          <td><a href="delete.php?userid=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> delete user </a></td>
+          <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a></td>
         </tr>
       <?php endforeach; ?>
     </tbody>

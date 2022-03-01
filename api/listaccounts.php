@@ -25,7 +25,7 @@ $accounts = json_decode( $resp );
 //Notify the browser about the type of the file using header function
 //header('Content-type: text/javascript');
 
-//Print the array in a simple JSON format
+// //Print the array in a simple JSON format
 // echo '<pre>';
 // echo json_encode($accounts, JSON_PRETTY_PRINT);
 // echo '</pre>';
@@ -84,7 +84,7 @@ $accounts = json_decode( $resp );
       
       ?>
         <tr>
-            <?php  if ($item["class"]["type"] == "transaction" ) {  ?>
+            <?php  if ($item["status"] == "available" ) {  ?>
           <td><a href="accounttransactions.php?accountno=<?PHP echo $item["id"]; ?>&user=<?php echo $_GET['userId']; ?>&token=<?php echo $_GET['token']; ?>"> <?PHP echo $item["name"]; ?> </a></td>
           <?php } else {  ?>
           <td><?PHP echo $item["name"]; ?> </td>
