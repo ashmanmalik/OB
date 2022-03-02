@@ -88,42 +88,14 @@ curl_close($curl11);
 
 $client_obj = json_decode( $client_token );
 
-//echo "client token : ".$client_obj->access_token;
-
-// Session storage beigns
-
-
-// $db = new SQLite3('/tmp/db.sqlite', SQLITE3_OPEN_CREATE | SQLITE3_OPEN_READWRITE);
-
-// $db->query('CREATE TABLE IF NOT EXISTS "tokens" (
-//     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-//     "token" VARCHAR
-// )');
-
-// $statement = $db->prepare('INSERT INTO "tokens" ("token") VALUES (:token)');
-// $statement->bindValue(':token', $server_obj->access_token);
-// $statement->execute();
-
-
-// $tokens = $db->query('SELECT token FROM "tokens"');
-// $row = $tokens->fetchArray() ;
-// echo json_encode($row["token"]) ;
-// // or echo $row['creation_time'] ;
-// // or print_r($row) ;
-// //echo("User visits: $visits");
-
-
-// //exit;
-// //$db->close();
 ?> 
 
 <?php
 $redirect_url = 'https://consent.basiq.io/home?userId='.$user_object->id.'&token='.$client_obj->access_token; 
 
-setcookie("userId", $user_object->id , time() + 2 * 24 * 60 * 60);
-setcookie("clientToken", $client_obj->access_token , time() + 2 * 24 * 60 * 60);
-setcookie("serverToken", $server_obj->access_token , time() + 2 * 24 * 60 * 60);
-
+setcookie("userId", $user_object->id , time() + 3600);
+setcookie("clientToken", $client_obj->access_token , time() + 3600);
+setcookie("serverToken", $server_obj->access_token , time() + 3600);
 
 header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
 //sleep(3);
