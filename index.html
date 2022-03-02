@@ -1,23 +1,10 @@
-<?php 
-
-$detect_device = new Mobile_Detect;
-
-// For All Mobile Devices
-if($detect_device->isMobile()) 
-{
- header('Location: ob-omega.vercel.app/mobile.html');
- exit;
-}
-
-// For All Tablet Devices
-if( $detect_device->isTablet()) 
-{
- header('Location: ob-omega.vercel.app/mobile.html');
- exit;
-}
-
-?>
-
+<script type="text/javascript">
+ <!--
+  if (screen.width <= 700) {
+  window.location = "https://ob-omega.vercel.app/mobile.html";
+  }
+ //-->
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
