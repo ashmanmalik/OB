@@ -2,6 +2,8 @@
 
 session_start();
 ob_start(); 
+
+$api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA=="; 
 // Validation needs to be added at some point here. (Server side Scripting)
 $email = $_POST['email'];
 $mobile = "+".$_POST['mobile'];
@@ -19,7 +21,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $headers = array(
    "Content-Type: application/x-www-form-urlencoded",
    "basiq-version: 3.0",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA==",
+   "Authorization: Basic {$api_Key}",
    "Content-Length: 0",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -74,7 +76,7 @@ curl_setopt($curl11, CURLOPT_RETURNTRANSFER, true);
 $headers1 = array(
    "Content-Type: application/x-www-form-urlencoded",
    "basiq-version: 3.0",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA==",
+   "Authorization: Basic {$api_Key}",
 );
 curl_setopt($curl11, CURLOPT_HTTPHEADER, $headers1);
 $data2 = '{"scope": "CLIENT_ACCESS"}';
