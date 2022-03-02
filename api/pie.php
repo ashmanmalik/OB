@@ -7,11 +7,12 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/2.0.0/css/searchPanes.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css">
-  <script type="text/javascript" href="https://code.jquery.com/jquery-3.5.1.js" />
-  <script type="text/javascript" href="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" />
-  <script type="text/javascript" href="https://cdn.datatables.net/searchpanes/2.0.0/js/dataTables.searchPanes.min.js" />
-  <script type="text/javascript" href="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js" />
-  <script type="text/javascript" href="https://code.highcharts.com/highcharts.js" />
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js" />
+  <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" />
+  <script type="text/javascript" src="https://cdn.datatables.net/searchpanes/2.0.0/js/dataTables.searchPanes.min.js" />
+  <script type="text/javascript" src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js" />
+  <script type="text/javascript" src="https://code.highcharts.com/highcharts.js" />
 <script type="text/javascript">
     $(document).ready(function () {
     // Create DataTable
