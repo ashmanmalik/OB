@@ -8,7 +8,7 @@ $usr = $_COOKIE["userId"];
 
 // Call Accounts API and populate the lists below ...
 
-$url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn;
+$url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=connect";
 $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
 $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
 
