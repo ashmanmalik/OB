@@ -60,6 +60,7 @@ $users_bucket = $myObject["data"];
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/2.0.0/css/searchPanes.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css">
 
@@ -125,7 +126,9 @@ function chartData(table) {
 </script>
 </head>
 <body>
-<table id="example"
+
+<div class="container">
+  <table id="example"
   data-mobile-responsive="true"
  class="display" style="width:100%">
         <thead>
@@ -160,6 +163,7 @@ function chartData(table) {
             </tr>
         </tfoot>
     </table>
+  </div>
 <script>
 
   $(function() {
