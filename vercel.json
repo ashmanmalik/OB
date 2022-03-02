@@ -2,6 +2,11 @@
   "functions": {
     "api/*.php": {
       "runtime": "vercel-php@0.4.0"
-    }
-  }
+    },
+    "index.php": {
+      "runtime": "vercel-php@0.4.0"
+    },
+    "mobile.php": {
+      "runtime": "vercel-php@0.4.0"
+    } 
 }
