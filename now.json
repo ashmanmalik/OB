@@ -2,6 +2,9 @@
   "functions": {
     "api/*.php": {
       "runtime": "now-php@0.0.7"
+    }, 
+    "*.php": {
+      "runtime": "now-php@0.0.7"
     }
   }
 }
