@@ -23,7 +23,7 @@ xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
       console.log(xhr.status);
       if (xhr.status == 204)  { 
-      	window.location.href = "https://ob-omega.vercel.app/api/admin_dashboard.php";
+      	window.location = "https://ob-omega.vercel.app/api/admin_dashboard.php";
       	console.log("user deleted");
       }
       else { 
