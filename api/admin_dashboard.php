@@ -53,77 +53,111 @@ $users_bucket = $myObject["data"];
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> Users </title>
+  <title> Pie Chart from Data </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/2.0.0/css/searchPanes.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.4/css/select.dataTables.min.css">
 
-<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.js"></script>
-<script src="https://unpkg.com/bootstrap-table@1.19.1/dist/extensions/mobile/bootstrap-table-mobile.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/searchpanes/2.0.0/js/dataTables.searchPanes.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
-
-  <style>
-    #myInput {
-  background-image: url('searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+<script type="text/javascript">
+    $(document).ready(function () {
+    // Create DataTable
+    var table = $('#example').DataTable({
+        dom: 'Pfrtip',
+    });
+ 
+    // Create the chart with initial data
+    var container = $('<div/>').insertBefore(table.table().container());
+ 
+    var chart = Highcharts.chart(container[0], {
+        chart: {
+            type: 'pie',
+        },
+        title: {
+            text: 'Users on Basiq Dashboard',
+        },
+        series: [
+            {
+                data: chartData(table),
+            },
+        ],
+    });
+ 
+    // On each draw, update the data in the chart
+    table.on('draw', function () {
+        chart.series[0].setData(chartData(table));
+    });
+});
+ 
+function chartData(table) {
+    var counts = {};
+ 
+    // Count the number of entries for each position
+    table
+        .column(1, { search: 'applied' })
+        .data()
+        .each(function (val) {
+            if (counts[val]) {
+                counts[val] += 1;
+            } else {
+                counts[val] = 1;
+            }
+        });
+ 
+    // And map it to the format highcharts uses
+    return $.map(counts, function (val, key) {
+        return {
+            name: key,
+            y: val,
+        };
+    });
 }
-</style>
+</script>
 </head>
 <body>
-
-<div class="container">
-  <h2> <button onclick="window.location='../index.html'" type="submit" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Back </button> Users <i class="fa fa-university" aria-hidden="true"></i> (<?php echo $myObject["size"]; ?>) </h2>
-      
-
- <table
-  id="myTable"
-  data-show-columns="true"
-  data-search="true"
-  data-mobile-responsive="true"
-  data-check-on-init="true"> 
-  <!--<table id="myTable" class="table">-->
-    <thead>
-      <tr>
-        <th> Id </th>
-        <th> email </th>
-        <th> mobile </th>
-        <th> createdTime </th>
-        <th> action </th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach($users_bucket as $key => $item): 
-      
-      ?>
-        <tr>
-          <td><?PHP echo $item["id"]; ?></td>
-          <td><?PHP echo $item["email"]; ?></td>
-          <td><?PHP echo $item["mobile"]; ?></td>
-          <td><?PHP echo $item["createdTime"]; ?></td>
-          <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a></td>
-        </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-</div>
-
-
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>createdTime</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+         <tbody>
+          <?php foreach($users_bucket as $key => $item): 
+          
+          ?>
+            <tr>
+              <td><?PHP echo $item["id"]; ?></td>
+              <td><?PHP echo $item["email"]; ?></td>
+              <td><?PHP echo $item["mobile"]; ?></td>
+              <td><?PHP echo $item["createdTime"]; ?></td>
+              <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>mobile</th>
+                <th>createdTime</th>
+                <th>actions</th>
+            </tr>
+        </tfoot>
+    </table>
 <script>
 
   $(function() {
@@ -151,5 +185,3 @@ function myFunction() {
 </script>
 </body>
 </html>
-
-
