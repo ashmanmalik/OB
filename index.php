@@ -1,4 +1,22 @@
+<?php 
 
+$detect_device = new Mobile_Detect;
+
+// For All Mobile Devices
+if($detect_device->isMobile()) 
+{
+ header('Location: ob-omega.vercel.app/mobile.html');
+ exit;
+}
+
+// For All Tablet Devices
+if( $detect_device->isTablet()) 
+{
+ header('Location: ob-omega.vercel.app/mobile.html');
+ exit;
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
