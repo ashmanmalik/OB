@@ -125,7 +125,9 @@ function chartData(table) {
 </script>
 </head>
 <body>
-<table id="example" class="display" style="width:100%">
+<table id="example"
+  data-mobile-responsive="true"
+ class="display" style="width:100%">
         <thead>
             <tr>
                 <th>id</th>
