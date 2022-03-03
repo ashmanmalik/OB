@@ -30,12 +30,14 @@ $accounts = json_decode( $resp );
     $transaction_data = $myObject["data"];
 
     $enrich_data = $myObject["data"]; 
-    echo '<pre>';
-    echo json_encode($enrich_data, JSON_PRETTY_PRINT);
-    echo '</pre>';
-    var_dump($enrich_data[0]["enrich"]);
-    echo "abc \n";
-    var_dump($enrich_data[0]->enrich);
+    
+    for ($i=0; $i<5; $i++) { 
+      echo '<pre>';
+      echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
+      echo '</pre>';
+    }
+    
+
 
   ?>
 
