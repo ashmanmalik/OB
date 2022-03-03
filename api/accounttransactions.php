@@ -20,17 +20,20 @@ curl_close($curl);
 $accounts = json_decode( $resp );
 
 // //Print the array in a simple JSON format
-echo '<pre>';
-echo json_encode($accounts, JSON_PRETTY_PRINT);
-echo '</pre>';
+// echo '<pre>';
+// echo json_encode($accounts, JSON_PRETTY_PRINT);
+// echo '</pre>';
 
 ?>
 <?php
     $myObject = json_decode($resp, true);
     $transaction_data = $myObject["data"];
 
-    $enrich_data = $myObject["data"]->enrich->location; 
-    var_dump($enrich_data);
+    $enrich_data = $myObject["data"]["enrich"]; 
+    echo '<pre>';
+    echo json_encode($enrich_data, JSON_PRETTY_PRINT);
+    echo '</pre>';
+   
 
   ?>
 
