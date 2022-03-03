@@ -90,6 +90,9 @@ curl_close($curl11);
 
 $client_obj = json_decode( $client_token );
 
+echo $client_obj->access_token;
+exit;
+
 ?> 
 
 <?php
