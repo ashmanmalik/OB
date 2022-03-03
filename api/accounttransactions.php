@@ -30,9 +30,9 @@ $accounts = json_decode( $resp );
     $transaction_data = $myObject["data"];
 
     $enrich_data = $myObject["data"]; 
-    var_dump($myObject["size"]);
+    //var_dump($myObject["size"]);
 
-    for ($i=0; $i<=$myObject["size"]; $i++) {
+    for ($i=0; $i<500; $i++) {
       if ($enrich_data[$i]["enrich"]["location"]) { 
         if($enrich_data[$i]["enrich"]["location"]["geometry"]) { 
         echo '<pre>';
