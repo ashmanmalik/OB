@@ -82,6 +82,9 @@ $accounts = json_decode( $resp );
     <option value="all">Export All</option>
     <option value="selected">Export Selected</option>
   </select>
+  <button class="btn btn-primary">
+    Transaction Locations
+  </button>
 </div>
  
 <table id="table"
