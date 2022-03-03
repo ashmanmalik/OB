@@ -33,8 +33,9 @@ $accounts = json_decode( $resp );
     echo '<pre>';
     echo json_encode($enrich_data, JSON_PRETTY_PRINT);
     echo '</pre>';
-    var_dump($enrich_data->enrich);
-   
+    var_dump($enrich_data[0]["enrich"]);
+    echo "abc \n";
+    var_dump($enrich_data[0]->enrich);
 
   ?>
 
