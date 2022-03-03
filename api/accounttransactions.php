@@ -28,6 +28,10 @@ echo '</pre>';
 <?php
     $myObject = json_decode($resp, true);
     $transaction_data = $myObject["data"];
+
+    $enrich_data = $myObject["data"]["enrich"]["location"]["geometry"]; 
+    var_dump($enrich_data);
+
   ?>
 
 <!DOCTYPE html>
