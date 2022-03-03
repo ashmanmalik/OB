@@ -24,22 +24,20 @@ $accounts = json_decode( $resp );
 // echo json_encode($accounts, JSON_PRETTY_PRINT);
 // echo '</pre>';
 
-?>
-<?php
-    $myObject = json_decode($resp, true);
-    $transaction_data = $myObject["data"];
+$myObject = json_decode($resp, true);
+$transaction_data = $myObject["data"];
 
-    $enrich_data = $myObject["data"]; 
-    for ($i=0; $i<500; $i++) {
-      if ($enrich_data[$i]["enrich"]["location"]) { 
-        if($enrich_data[$i]["enrich"]["location"]["geometry"]) { 
-        echo '<pre>';
-        echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
-        echo '</pre>';
-        }
-      }
+$enrich_data = $myObject["data"]; 
+for ($i=0; $i<500; $i++) {
+  if ($enrich_data[$i]["enrich"]["location"]) { 
+    if($enrich_data[$i]["enrich"]["location"]["geometry"]) { 
+    echo '<pre>';
+    echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
+    echo '</pre>';
     }
-    
+  }
+}
+
 
 
   ?>

@@ -82,7 +82,7 @@ $accounts = json_decode( $resp );
       ?>
         <tr>
             <?php  if ($item["status"] == "available" ) {  ?>
-          <td><a href="accounttransactions.php?accountno=<?PHP echo $item["id"]; ?>&user=<?php echo $_GET['userId']; ?>&token=<?php echo $_GET['token']; ?>"> <?PHP echo $item["name"]; ?> </a></td>
+          <td><a href="indexdb.php?accountno=<?PHP echo $item["id"]; ?>&user=<?php echo $_GET['userId']; ?>&token=<?php echo $_GET['token']; ?>"> <?PHP echo $item["name"]; ?> </a></td>
           <?php } else {  ?>
           <td><?PHP echo $item["name"]; ?> </td>
           <?php } ?>
