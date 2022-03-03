@@ -30,12 +30,19 @@ $accounts = json_decode( $resp );
     $transaction_data = $myObject["data"];
 
     $enrich_data = $myObject["data"]; 
-    
-    for ($i=0; $i<10; $i++) {
+    var_dump($myObject["size"]);
+
+    for ($i=0; $i<=$myObject["size"]; $i++) {
       if ($enrich_data[$i]["enrich"]["location"]) { 
+        if($enrich_data[$i]["enrich"]["location"]["geometry"]) { 
+        echo '<pre>';
+        echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
+        echo '</pre>';
+        }
         echo '<pre>';
         echo json_encode($enrich_data[$i]["enrich"]["location"], JSON_PRETTY_PRINT);
         echo '</pre>';
+        
       } else { 
         echo '<pre>';
         echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
