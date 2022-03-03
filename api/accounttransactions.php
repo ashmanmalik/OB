@@ -39,15 +39,16 @@ $accounts = json_decode( $resp );
         echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
         echo '</pre>';
         }
-        echo '<pre>';
-        echo json_encode($enrich_data[$i]["enrich"]["location"], JSON_PRETTY_PRINT);
-        echo '</pre>';
-        
-      } else { 
-        echo '<pre>';
-        echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
-        echo '</pre>';
       }
+        // echo '<pre>';
+        // echo json_encode($enrich_data[$i]["enrich"]["location"], JSON_PRETTY_PRINT);
+        // echo '</pre>';
+        
+      // } else { 
+      //   echo '<pre>';
+      //   echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
+      //   echo '</pre>';
+      // }
     }
     
 
