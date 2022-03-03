@@ -31,10 +31,16 @@ $accounts = json_decode( $resp );
 
     $enrich_data = $myObject["data"]; 
     
-    for ($i=0; $i<5; $i++) { 
-      echo '<pre>';
-      echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
-      echo '</pre>';
+    for ($i=0; $i<10; $i++) {
+      if ($enrich_data[$i]["enrich"]["location"]) { 
+        echo '<pre>';
+        echo json_encode($enrich_data[$i]["enrich"]["location"], JSON_PRETTY_PRINT);
+        echo '</pre>';
+      } else { 
+        echo '<pre>';
+        echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
+        echo '</pre>';
+      }
     }
     
 
