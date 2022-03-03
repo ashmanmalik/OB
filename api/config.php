@@ -66,27 +66,32 @@ $user_object = json_decode( $resp );
 
 // Calling token for Client_access EP to use it into Consent. 
 
-$url2 = "https://au-api.basiq.io/token";
+$url0 = "https://au-api.basiq.io/token";
 
-$curl11 = curl_init($url2);
-curl_setopt($curl11, CURLOPT_URL, $url2);
-curl_setopt($curl11, CURLOPT_POST, true);
-curl_setopt($curl11, CURLOPT_RETURNTRANSFER, true);
+$curl0 = curl_init($url0);
+curl_setopt($curl0, CURLOPT_URL, $url0);
+curl_setopt($curl0, CURLOPT_POST, true);
+curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
 
-$headers1 = array(
-   "Content-Type: application/x-www-form-urlencoded",
+$headers0 = array(
+   "Content-Type: application/json",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjljZDM1Yjc1LTc3ZGYtNDVkMC1hMjVlLTEwOGQ5Y2U0NzdlNA==",
    "basiq-version: 3.0",
-   "Authorization: Basic {$api_Key}"
 );
-curl_setopt($curl11, CURLOPT_HTTPHEADER, $headers1);
-$data2 = '{"scope": "CLIENT_ACCESS", "userId": $user_object->id}';
-curl_setopt($curl11, CURLOPT_POSTFIELDS, $data2);
-//for debug only!
-curl_setopt($curl11, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl11, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
-$client_token = curl_exec($curl11);
-curl_close($curl11);
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": $user_object->id}';
+
+curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
+
+//for debug only!
+curl_setopt($curl0, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl0, CURLOPT_SSL_VERIFYPEER, false);
+
+$client_token = curl_exec($curl0);
+curl_close($curl0);
+var_dump($client_token);
+
 
 $client_obj = json_decode( $client_token );
 
