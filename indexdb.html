@@ -20,35 +20,28 @@
 		function initialize() {
 		
 		var locations = [
-		  ['<h5>test 01</h5>', 5.550176, 95.319263],
-		  ['<h5>Ibukota Kab.Aceh Jaya</h5>', 4.727890, 95.601373],
-		  ['<h5>Ibukota Abdya</h5>', 3.818570, 96.831841],
-		  ['<h5>Ibukota Kotamadya Langsa</h5>', 4.476020, 97.952447],
-		  ['<h5>Ibukota Kotamadya Sabang</h5>', 5.909284, 95.304742]		
-		
-		];
+		  ['<h5>test 01</h5>', -33.7699551, 150.9524992],
+		  ['<h5>test 02</h5>', 4.727890, 95.601373]
+		 ];
 		var infowindow = new google.maps.InfoWindow();
 	
 		var options = {
 		  zoom: 8, 
-		  center: new google.maps.LatLng(4.845582, 96.271539),
+		  center: new google.maps.LatLng(-32.243389, 148.609157),
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 	
-	   // Pembuatan petanya
-		var map = new google.maps.Map(document.getElementById('map_canvas'), options);
+	var map = new google.maps.Map(document.getElementById('map_canvas'), options);
 	
     var marker, i;
-	// proses penambahan marker pada masing-masing lokasi yang berbeda
-    for (i = 0; i < locations.length; i++) {  
+	for (i = 0; i < locations.length; i++) {  
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
         map: map,
 		 
       });
    
-	  // Menampilkan informasi pada masing-masing marker yang diklik	
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+	  google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
           infowindow.setContent(locations[i][0]);
           infowindow.open(map, marker);
@@ -67,9 +60,8 @@
 	<div class="row">
 		<div class="col-md-8">
 			<div class="panel panel-default">
-				<div class="panel-heading">Marker Google Maps</div>
 					<div class="panel-body">
-						<div id="map_canvas" style="width: 700px; height: 600px;"></div>
+						<div id="map_canvas"></div>
 					</div>
 			</div>
 		</div>	
