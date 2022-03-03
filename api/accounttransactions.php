@@ -29,7 +29,7 @@ echo '</pre>';
     $myObject = json_decode($resp, true);
     $transaction_data = $myObject["data"];
 
-    $enrich_data = $myObject["data"]["enrich"]["location"]["geometry"]; 
+    $enrich_data = $myObject["data"]->enrich->location; 
     var_dump($enrich_data);
 
   ?>
