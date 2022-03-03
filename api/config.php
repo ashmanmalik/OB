@@ -76,10 +76,10 @@ curl_setopt($curl11, CURLOPT_RETURNTRANSFER, true);
 $headers1 = array(
    "Content-Type: application/x-www-form-urlencoded",
    "basiq-version: 3.0",
-   "Authorization: Basic {$api_Key}",
+   "Authorization: Basic {$api_Key}"
 );
 curl_setopt($curl11, CURLOPT_HTTPHEADER, $headers1);
-$data2 = '{"scope": "CLIENT_ACCESS"}';
+$data2 = '{"scope": "CLIENT_ACCESS", "userId": $user_object->id}';
 curl_setopt($curl11, CURLOPT_POSTFIELDS, $data2);
 //for debug only!
 curl_setopt($curl11, CURLOPT_SSL_VERIFYHOST, false);

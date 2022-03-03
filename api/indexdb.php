@@ -33,13 +33,11 @@ $accounts = json_decode( $resp );
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="ilmu-detil.blogspot.com">
 	<title> Mapper </title>
 	<!-- Bagian css -->
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/ilmudetil.css">
 	
-	<!-- Bagian js -->
 	<script src='assets/js/jquery-1.10.1.min.js'></script>       
     
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -51,24 +49,19 @@ $accounts = json_decode( $resp );
     var marker;
       function initialize() {
 		  
-		// Variabel untuk menyimpan informasi (desc)
 		var infoWindow = new google.maps.InfoWindow;
 		
-		//  Variabel untuk menyimpan peta Roadmap
 		var mapOptions = {
           mapTypeId: google.maps.MapTypeId.ROADMAP
         } 
 		
-		// Pembuatan petanya
 		var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
               
-        // Variabel untuk menyimpan batas kordinat
-		var bounds = new google.maps.LatLngBounds();
+        var bounds = new google.maps.LatLngBounds();
 
-		// Pengambilan data dari database
 		<?php
 
-   //          $query = mysqli_query($con,"select * from data_location");
+            // $query = mysqli_query($con,"select * from data_location");
 			// while ($data = mysqli_fetch_array($query))
 			// {
 			// 	$nama = $data['desc'];
@@ -98,7 +91,6 @@ $accounts = json_decode( $resp );
 			}
           ?>
 		  
-		// Proses membuat marker 
 		function addMarker(lat, lng, info) {
 			var lokasi = new google.maps.LatLng(lat, lng);
 			bounds.extend(lokasi);
@@ -110,8 +102,7 @@ $accounts = json_decode( $resp );
 			bindInfoWindow(marker, map, infoWindow, info);
 		 }
 		
-		// Menampilkan informasi pada masing-masing marker yang diklik
-        function bindInfoWindow(marker, map, infoWindow, html) {
+		function bindInfoWindow(marker, map, infoWindow, html) {
           google.maps.event.addListener(marker, 'click', function() {
             infoWindow.setContent(html);
             infoWindow.open(map, marker);
@@ -128,7 +119,7 @@ $accounts = json_decode( $resp );
 <div class="container" style="margin-top:10px">	
 	<div class="row">
 		<div class="col-md-8">
-			<div class="panel panel-default">g
+			<div class="panel panel-default">
 					<div class="panel-body">
 						<div id="map-canvas" style="width: 700px; height: 600px;"></div>
 					</div>
