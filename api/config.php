@@ -80,7 +80,7 @@ $headers0 = array(
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": "6da7aafa-e3c5-4eac-8ea9-7233a31e5973"}';
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($user_object->id).'';
 
 curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
 
