@@ -64,6 +64,7 @@ $resp = curl_exec($curl);
 curl_close($curl);
 $user_object = json_decode( $resp );
 
+$useridforClient = $user_object->id; 
 // Calling token for Client_access EP to use it into Consent. 
 
 $url0 = "https://au-api.basiq.io/token";
@@ -81,7 +82,7 @@ $headers0 = array(
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
 
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": '."'$user_object->id'".'}';
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.'"$useridforClient"'.'}';
 
 echo $data0;
 var_dump($data0);
