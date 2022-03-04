@@ -85,7 +85,7 @@ $accounts = json_decode( $resp );
 			    // echo '<pre>';
 			    // echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
 			    // echo '</pre>';
-			    echo ("addMarker($lat, $lon, '<b>$nama</b>');\n");
+			    echo ("addMarker($lat, $lon, '<b> test </b>');");
 
 			    }
 			  }
