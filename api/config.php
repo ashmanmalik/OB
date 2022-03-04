@@ -82,14 +82,14 @@ $headers0 = array(
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
 
-$stringer = '$useridforClient';
-echo $stringer;
+//echo $user_object->id;
+
 
 $data0 = '{"scope": "CLIENT_ACCESS", "userId": '.$useridforClient.' }';
 
 
-var_dump($data0);
-exit; 
+//var_dump($data0);
+//exit; 
 
 curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
 
