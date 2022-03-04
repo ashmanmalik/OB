@@ -45,7 +45,23 @@ $accounts = json_decode( $resp );
 	<!-- akhir dari Bagian js -->
 	<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 	
-	<script>
+	
+	
+</head>
+<body onload="initialize()">
+<div class="container" style="margin-top:10px">	
+	<div class="row">
+		<div class="col-md-8">
+			<div class="panel panel-default">
+					<div class="panel-body">
+						<div id="map-canvas" style="width: 700px; height: 600px;"></div>
+					</div>
+			</div>
+		</div>	
+	</div>
+</div>	
+
+<script>
 		
     var marker;
       function initialize() {
@@ -114,19 +130,5 @@ $accounts = json_decode( $resp );
       google.maps.event.addDomListener(window, 'load', initialize);
     
 	</script>
-	
-</head>
-<body onload="initialize()">
-<div class="container" style="margin-top:10px">	
-	<div class="row">
-		<div class="col-md-8">
-			<div class="panel panel-default">
-					<div class="panel-body">
-						<div id="map-canvas" style="width: 700px; height: 600px;"></div>
-					</div>
-			</div>
-		</div>	
-	</div>
-</div>	
 </body>
 </html>
