@@ -81,8 +81,11 @@ $headers0 = array(
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
+echo $useridforClient; 
 
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.'"$useridforClient"'.'}';
+print_r($useridforClient);
+
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": $useridforClient }';
 
 echo $data0;
 var_dump($data0);
