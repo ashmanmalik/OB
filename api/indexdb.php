@@ -35,12 +35,13 @@ $accounts = json_decode( $resp );
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> Mapper </title>
 	<!-- Bagian css -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/ilmudetil.css">
+	<link rel="stylesheet" href="https://ashmanmalik.github.io/portifolio/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://ashmanmalik.github.io/portifolio/assets/css/ilmudetil.css">
 	
-	<script src='assets/js/jquery-1.10.1.min.js'></script>       
+	<!-- Bagian js -->
+	<script src='https://ashmanmalik.github.io/portifolio/assets/js/jquery-1.10.1.min.js'></script>       
     
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="https://ashmanmalik.github.io/portifolio/assets/js/bootstrap.min.js"></script>
 	<!-- akhir dari Bagian js -->
 	<script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 	
