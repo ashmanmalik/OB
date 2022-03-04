@@ -54,7 +54,7 @@ curl_setopt($curls, CURLOPT_HTTPHEADER, $headerss);
 
 $datas = '{"email": '.json_encode($email).', "mobile": '.json_encode($mobile).'}';
 
-var_dump($datas);
+// var_dump($datas);
 
 
 curl_setopt($curls, CURLOPT_POSTFIELDS, $datas);
@@ -68,9 +68,9 @@ curl_close($curls);
 
 $user_object = json_decode( $resps );
 
-var_dump($user_object);
-exit();
-exit; 
+// var_dump($user_object);
+// exit();
+// exit; 
 
 // Calling token for Client_access EP to use it into Consent. 
 
