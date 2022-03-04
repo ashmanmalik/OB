@@ -80,7 +80,7 @@ $headers0 = array(
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
- $data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($user_object->id).'';
+ $data0 = '{"scope": "CLIENT_ACCESS", "userId": "$user_object->id)"';
 
 echo $data0;
 var_dump($data0);
