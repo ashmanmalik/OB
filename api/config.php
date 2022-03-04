@@ -62,8 +62,12 @@ curl_setopt($curls, CURLOPT_SSL_VERIFYPEER, false);
 
 $resps = curl_exec($curls);
 curl_close($curls);
+
 $user_object = json_decode( $resps );
 
+var_dump($user_object);
+exit();
+exit; 
 
 // Calling token for Client_access EP to use it into Consent. 
 
@@ -80,12 +84,7 @@ $headers0 = array(
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
-
-
-//echo $user_object->id;
-
 $data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($user_object->id).'}';
-
 curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
 
 //for debug only!
