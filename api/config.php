@@ -85,11 +85,9 @@ curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 //echo $user_object->id;
 
 
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.$useridforClient.' }';
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($user_object->id).' }';
 
-echo strval($data0);
-
-echo json_encode($data0);
+echo $data0;
 exit; 
 
 //var_dump($data0);
