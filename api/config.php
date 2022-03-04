@@ -82,12 +82,12 @@ $headers0 = array(
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
 
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.$useridforClient.' }';
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '".$useridforClient."' }';
 
 
 echo $data0;
 //var_dump($data0);
-exit; 
+//exit; 
 
 curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
 
