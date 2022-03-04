@@ -1,6 +1,6 @@
 <?php 
 
-
+session_start(); 
 ob_start(); 
 
 $api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw=="; 
@@ -53,6 +53,9 @@ $headerss = array(
 curl_setopt($curls, CURLOPT_HTTPHEADER, $headerss);
 
 $datas = '{"email": '.json_encode($email).', "mobile": '.json_encode($mobile).'}';
+
+var_dump($datas);
+
 
 curl_setopt($curls, CURLOPT_POSTFIELDS, $datas);
 
