@@ -3,7 +3,7 @@
 
 ob_start(); 
 
-$api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA=="; 
+$api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw=="; 
 // Validation needs to be added at some point here. (Server side Scripting)
 $email = $_POST['email'];
 $mobile = "+".$_POST['mobile'];
@@ -76,7 +76,7 @@ curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
 
 $headers0 = array(
    "Content-Type: application/json",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjljZDM1Yjc1LTc3ZGYtNDVkMC1hMjVlLTEwOGQ5Y2U0NzdlNA==",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw==",
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
