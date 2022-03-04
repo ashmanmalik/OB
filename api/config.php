@@ -82,7 +82,7 @@ $headers0 = array(
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
 
-$stringer = ".$useridforClient.";
+$stringer = '$useridforClient';
 echo $stringer;
 
 $data0 = '{"scope": "CLIENT_ACCESS", "userId": '.$useridforClient.' }';
