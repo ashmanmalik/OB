@@ -85,7 +85,6 @@ curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 $data0 = '{"scope": "CLIENT_ACCESS", "userId": '".$useridforClient."' }';
 
 
-echo $data0;
 //var_dump($data0);
 //exit; 
 
@@ -102,8 +101,6 @@ curl_close($curl0);
 
 $client_obj = json_decode( $client_token );
 
-echo $client_obj->access_token;
-exit;
 
 ?> 
 
