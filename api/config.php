@@ -1,6 +1,6 @@
 <?php 
 
-session_start();
+
 ob_start(); 
 
 $api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmQ4OTVlZmUzLTcwOTMtNDdlZC1hN2NmLTVmMWFkNGJlY2MwOA=="; 
@@ -39,32 +39,32 @@ $server_obj = json_decode( $server_token );
 
 // Calling user EP to generate a user using token. 
 
-$url = "https://au-api.basiq.io/users";
+$urls = "https://au-api.basiq.io/users";
 
-$curl = curl_init($url);
-curl_setopt($curl, CURLOPT_URL, $url);
-curl_setopt($curl, CURLOPT_POST, true);
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$curls = curl_init($urls);
+curl_setopt($curls, CURLOPT_URL, $urls);
+curl_setopt($curls, CURLOPT_POST, true);
+curl_setopt($curls, CURLOPT_RETURNTRANSFER, true);
 
-$headers = array(
+$headerss = array(
    "Authorization: Bearer {$server_obj->access_token}",
    "Content-Type: application/json",
 );
-curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($curls, CURLOPT_HTTPHEADER, $headerss);
 
-$data = '{"email": '.json_encode($email).', "mobile": '.json_encode($mobile).'}';
+$datas = '{"email": '.json_encode($email).', "mobile": '.json_encode($mobile).'}';
 
-curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+curl_setopt($curls, CURLOPT_POSTFIELDS, $datas);
 
 //for debug only!
-curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($curls, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curls, CURLOPT_SSL_VERIFYPEER, false);
 
-$resp = curl_exec($curl);
-curl_close($curl);
-$user_object = json_decode( $resp );
+$resps = curl_exec($curls);
+curl_close($curls);
+$user_object = json_decode( $resps );
 
-$useridforClient = $user_object->id; 
+
 // Calling token for Client_access EP to use it into Consent. 
 
 $url0 = "https://au-api.basiq.io/token";
