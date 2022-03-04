@@ -80,7 +80,7 @@ $headers0 = array(
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
 
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": $user_object->id}';
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": "6da7aafa-e3c5-4eac-8ea9-7233a31e5973"}';
 
 curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
 
@@ -90,7 +90,7 @@ curl_setopt($curl0, CURLOPT_SSL_VERIFYPEER, false);
 
 $client_token = curl_exec($curl0);
 curl_close($curl0);
-var_dump($client_token);
+//var_dump($client_token);
 
 
 $client_obj = json_decode( $client_token );
