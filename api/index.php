@@ -32,7 +32,7 @@ $accounts = json_decode( $resp );
 		    	$lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
 		      	$planes[] = $lat;
 			  	$planes[] = $lon;
-			  	$planer = array($planes[$i]);
+			  	$planer += array($planes);
 	    	}
 	    }
 
