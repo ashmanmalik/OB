@@ -30,8 +30,8 @@ $accounts = json_decode( $resp );
 	    	if ($enrich_data[$i]["enrich"]["location"]["geometry"]["lat"] != "") { 
 				$lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
 		    	$lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
-		      	$planes[$i] = $lat;
-			  	$planes[$i] = $lon;
+		      	$planes[] = $lat;
+			  	$planes[] = $lon;
 			  	$planer = array($planes[$i]);
 	    	}
 	    }
