@@ -29,7 +29,7 @@ $accounts = json_decode( $resp );
 	    	if ($enrich_data[$i]["enrich"]["location"]["geometry"]["lat"] != "" && $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"] != "") { 
 				$lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
 		    	$lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
-		    	$planes[] = array($lat, $lon);
+		    	$planes[] = array("test", $lat, $lon);
 		      	
 
 	    	}
@@ -55,12 +55,12 @@ $accounts = json_decode( $resp );
     </script>
 
     <script>
-    //var planes = <?php echo json_encode($planes); ?>; 
+    var planes = <?php echo json_encode($planes); ?>; 
 	
-    var planes = [
-    ["abc", "-33.899629","151.0656538"],
-    ["xyz", "-28.0291428","153.4337534"],
-    ]; 
+    // //var planes = [
+    // ["abc", "-33.899629","151.0656538"],
+    // ["xyz", "-28.0291428","153.4337534"],
+    // ]; 
 	
 	// //var planes = [
 	// 	["7C6B07",-40.99497,174.50808],
