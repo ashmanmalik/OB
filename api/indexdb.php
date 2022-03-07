@@ -78,30 +78,18 @@ $accounts = json_decode( $resp );
 
 		<?php
 
-            // $query = mysqli_query($con,"select * from data_location");
-			// while ($data = mysqli_fetch_array($query))
-			// {
-			// 	$nama = $data['desc'];
-			// 	$lat = $data['lat'];
-			// 	$lon = $data['lon'];
-				
-			// 	echo ("addMarker($lat, $lon, '<b>$nama</b>');\n");                        
-			// }
-
 			$myObject = json_decode($resp, true);
 			$transaction_data = $myObject["data"];
 
 			$enrich_data = $myObject["data"]; 
 			for ($i=0; $i<500; $i++) {
 			  if ($enrich_data[$i]["enrich"]["location"]) { 
-			    if($enrich_data[$i]["enrich"]["location"]["geometry"]) {
+			    if($enrich_data[$i]["enrich"]["location"]["geometry"] != "") {
 
 			    $lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
 			    $lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
-			    // echo '<pre>';
-			    // echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
-			    // echo '</pre>';
-			    echo ("addMarker($lat, $lon, '<b> test </b>'); \n");
+
+			    echo ("addMarker($lat, $lon, '<b> test </b>');\n");
 			    }
 			  }
 			}
