@@ -1,4 +1,45 @@
 
+<?php 
+
+$url = "https://au-api.basiq.io/users/".$_GET['user']."/transactions?filter=account.id.eq(".$_GET['accountno'].")";
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$headers = array(
+   "Accept: application/json",
+   "Authorization: Bearer {$_GET['token']}",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+
+$accounts = json_decode( $resp );
+
+
+	$myObject = json_decode($resp, true);
+	$transaction_data = $myObject["data"];
+	$planes = array();
+	$enrich_data = $myObject["data"]; 
+	for ($i=0; $i<500; $i++) {
+	  if ($enrich_data[$i]["enrich"]["location"]) { 
+	    if($enrich_data[$i]["enrich"]["location"]["geometry"] != "") {
+
+	    $lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
+	    $lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
+
+	      $planes[] = $lat;
+		  $planes[] = $lon;
+
+
+	    }
+	  }
+	}
+	echo json_encode($planes);
+?>
 <!DOCTYPE html>
 <html>
 <head>
