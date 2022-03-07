@@ -49,7 +49,7 @@ $accounts = json_decode( $resp );
 </head>
 <body>
 
-    <div id="map" style="width: 600px; height: 400px"></div>
+    <div id="map"></div>
 
     <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.js">
     </script>
