@@ -22,6 +22,7 @@ $accounts = json_decode( $resp );
 
 	$myObject = json_decode($resp, true);
 	$transaction_data = $myObject["data"];
+	$planes = array();
 	$enrich_data = $myObject["data"]; 
 	for ($i=0; $i<500; $i++) {
 	  if ($enrich_data[$i]["enrich"]["location"]) { 
@@ -29,14 +30,14 @@ $accounts = json_decode( $resp );
 	    	if ($enrich_data[$i]["enrich"]["location"]["geometry"]["lat"] != "") { 
 				$lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
 		    	$lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
-		      	$planes = array(array_push($lat, $lon));
+		      	$planer = array_push($planes, $lat, $lon);
 	    	}
 	    }
 
 	  }
 
 	}
-	echo json_encode($planes);
+	echo json_encode($planer);
 ?>
 <!DOCTYPE html>
 <html>
