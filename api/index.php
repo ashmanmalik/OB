@@ -26,7 +26,7 @@ $accounts = json_decode( $resp );
 	for ($i=0; $i<500; $i++) {
 	  if ($enrich_data[$i]["enrich"]["location"]) { 
 	    if($enrich_data[$i]["enrich"]["location"]["geometry"]) {
-	    	if ($enrich_data[$i]["enrich"]["location"]["geometry"]["lat"] != "" && $enrich_data[$i]["enrich"]["location"]["geometry"]["lon"] != "") { 
+	    	if ($enrich_data[$i]["enrich"]["location"]["geometry"]["lat"] != "" && $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"] != "") { 
 				$lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
 		    	$lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
 		    	$planes[] = array($lat, $lon);
