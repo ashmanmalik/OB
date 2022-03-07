@@ -101,11 +101,12 @@ $accounts = json_decode( $resp );
 			    // echo '<pre>';
 			    // echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
 			    // echo '</pre>';
-			    echo ("addMarker($lat, $lon, '<b> test </b>');");
-			    break;
+			    addMarker($lat, $lon, '<b> test </b>');;
+			    //break;
 			    }
 			  }
 			}
+			
           ?>
 		  
 		function addMarker(lat, lng, info) {
