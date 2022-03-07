@@ -38,7 +38,7 @@ $accounts = json_decode( $resp );
 	  }
 
 	}
-	echo json_encode($myarray);
+	echo json_encode($planes);
 ?>
 <!DOCTYPE html>
 <html>
