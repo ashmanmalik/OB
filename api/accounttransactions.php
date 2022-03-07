@@ -27,18 +27,18 @@ $accounts = json_decode( $resp );
 $myObject = json_decode($resp, true);
 $transaction_data = $myObject["data"];
 
-$enrich_data = $myObject["data"]; 
-for ($i=0; $i<500; $i++) {
-  if ($enrich_data[$i]["enrich"]["location"]) { 
-    if($enrich_data[$i]["enrich"]["location"]["geometry"]) { 
-    echo '<pre>';
-    echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
-    echo '</pre>';
-    }
-  }
-}
+// $enrich_data = $myObject["data"]; 
+// for ($i=0; $i<500; $i++) {
+//   if ($enrich_data[$i]["enrich"]["location"]) { 
+//     if($enrich_data[$i]["enrich"]["location"]["geometry"]) { 
+//     echo '<pre>';
+//     echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
+//     echo '</pre>';
+//     }
+//   }
+// }
 
-
+$enrich_url = "index.php?accountno=".$_GET['accountno']."&user=".$_GET['user']."&token=".$_GET["token"];
 
   ?>
 
@@ -77,7 +77,7 @@ for ($i=0; $i<500; $i++) {
     <option value="all">Export All</option>
     <option value="selected">Export Selected</option>
   </select>
-  <button class="btn btn-primary">
+  <button class="btn btn-primary" onclick="window.location=<?php echo $enrich_url; ?>">
     Transaction Locations
   </button>
 </div>
