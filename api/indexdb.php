@@ -101,12 +101,12 @@ $accounts = json_decode( $resp );
 			    // echo '<pre>';
 			    // echo json_encode($enrich_data[$i]["enrich"]["location"]["geometry"], JSON_PRETTY_PRINT);
 			    // echo '</pre>';
-			    addMarker($lat, $lon, '<b> test </b>');;
+			    echo addMarker($lat, $lon, '<b> test </b>');
 			    //break;
 			    }
 			  }
 			}
-			
+
           ?>
 		  
 		function addMarker(lat, lng, info) {
@@ -117,7 +117,7 @@ $accounts = json_decode( $resp );
 				position: lokasi
 			});       
 			map.fitBounds(bounds);
-			bindInfoWindow(marker, map, infoWindow, info);
+			 bindInfoWindow(marker, map, infoWindow, info);
 		 }
 		
 		function bindInfoWindow(marker, map, infoWindow, html) {
