@@ -7,7 +7,7 @@ $url = 'https://ashmanmalik.github.io/portifolio/data.json';
 $json = file_get_contents($url);
 $data = json_decode($json);
 
-var_dump($data);
+var_dump($data[0]);
 
 echo "<p>&nbsp;</p>";
 var_dump($data["location_formatted_address"]);
