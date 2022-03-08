@@ -7,7 +7,10 @@ $file = "https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv"
 $csv= file_get_contents($file);
 $array = array_map("str_getcsv", explode("\n", $csv));
 $json = json_encode($array);
-print_r($json);
+
+echo '<pre>';
+echo json_encode($json, JSON_PRETTY_PRINT);
+echo '</pre>';
 
 exit();
 exit; 
