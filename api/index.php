@@ -1,6 +1,8 @@
 
 <?php 
 
+
+
 $url = "https://au-api.basiq.io/users/".$_GET['user']."/transactions?filter=account.id.eq(".$_GET['accountno'].")";
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
@@ -39,6 +41,7 @@ $accounts = json_decode( $resp );
 
 	}
 	//echo json_encode($planes);
+	$enriched_url = "indexdb.php?accountno=".$_GET['accountno']."&user=".$_GET['user']."&token=".$_GET["token"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,10 +49,20 @@ $accounts = json_decode( $resp );
     <title> Simple Map </title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css" />
+    <style type="text/css">
+    	#refreshButton {
+		  position: absolute;
+		  top: 20px;
+		  right: 20px;
+		  padding: 10px;
+		  z-index: 400;
+		}
+    </style>
 </head>
 <body>
 
     <div id="map" style=" height: 1000px"></div>
+    <a id="refreshButton" href="indexdb.php?<?php echo $enriched_url; ?>"> Convert Addresses to Lat Long </a>
 
     <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.js">
     </script>
