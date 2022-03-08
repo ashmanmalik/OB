@@ -1,7 +1,16 @@
 
 <?php 
+// https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv
+// Converting csv to JSON and reading data...
 
+$file = "https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv";
+$csv= file_get_contents($file);
+$array = array_map("str_getcsv", explode("\n", $csv));
+$json = json_encode($array);
+print_r($json);
 
+exit();
+exit; 
 
 $url = "https://au-api.basiq.io/users/".$_GET['user']."/transactions?filter=account.id.eq(".$_GET['accountno'].")";
 $curl = curl_init($url);
