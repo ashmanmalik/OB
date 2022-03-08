@@ -10,7 +10,7 @@ $data = json_decode($json);
 
 var_dump($data);
 echo "<p>&nbsp;</p>";
-var_dump($data[0]["location_formatted_address"]);
+echo $data[0]["location_formatted_addressn"];
 
 
 
