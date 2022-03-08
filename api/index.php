@@ -62,7 +62,7 @@ $accounts = json_decode( $resp );
 <body>
 
     <div id="map" style=" height: 1000px"></div>
-    <a id="refreshButton" href="indexdb.php?<?php echo $enriched_url; ?>"> Convert Addresses to Lat Long </a>
+    <a id="refreshButton" href="<?php echo $enriched_url; ?>"> Convert Addresses to Lat Long </a>
 
     <script src="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.js">
     </script>
