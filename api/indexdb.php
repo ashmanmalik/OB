@@ -1,3 +1,4 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
 
 <?php 
 // https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv
