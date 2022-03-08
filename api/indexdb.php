@@ -3,14 +3,17 @@
 // https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv
 // Converting csv to JSON and reading data...
 
-$file = "https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv";
-$csv= file_get_contents($file);
-$array = array_map("str_getcsv", explode("\n", $csv));
-$json = json_encode($array);
+$file = "https://ashmanmalik.github.io/portifolio/data.json";
+$arr = json_decode($file);
 
-echo '<pre>';
-echo json_encode($json, JSON_PRETTY_PRINT);
-echo '</pre>';
+foreach($arr as $item) { //foreach element in $arr
+
+	echo '<pre>';
+	echo json_encode($arr['location_formatted_address'], JSON_PRETTY_PRINT);
+	echo '</pre>';
+    
+}
+
 
 exit();
 exit; 
