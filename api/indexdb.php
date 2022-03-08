@@ -1,5 +1,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script type="text/javascript">
 	
+	var address = "4 Satellite Drive, Werribee, Victoria, 3030";
+
 	$.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+address, function(data){
        console.log(data);
     });
