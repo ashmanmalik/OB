@@ -36,8 +36,9 @@ $accounts = json_decode( $resp );
 
 	   //  	}
 	   //  }
-	  	echo json_encode($enrich_data[$i]["enrich"]["location"]);
-
+	echo '<pre>';
+    echo json_encode($enrich_data[$i]["enrich"]["location"], JSON_PRETTY_PRINT);
+    echo '</pre>';
 	  }
 
 	}
