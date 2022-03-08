@@ -1,4 +1,10 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script type="text/javascript">
+	
+	$.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+address, function(data){
+       console.log(data);
+    });
+
+</script>
 
 <?php 
 // https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv
