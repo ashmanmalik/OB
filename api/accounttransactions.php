@@ -77,9 +77,9 @@ $enrich_url = "index.php?accountno=".$_GET['accountno']."&user=".$_GET['user']."
     <option value="all">Export All</option>
     <option value="selected">Export Selected</option>
   </select>
-  <button class="btn btn-primary" onclick="window.location=<?php echo $enrich_url; ?>">
-    Transaction Locations
-  </button>
+  <a href="<?php echo $enrich_url; ?>">
+    Enrich Transactions
+  </a>
 </div>
  
 <table id="table"
