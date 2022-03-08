@@ -7,8 +7,9 @@ $url = 'https://ashmanmalik.github.io/portifolio/data.json';
 $json = file_get_contents($url);
 $data = json_decode($json);
 
-var_dump($data[0]);
-
+echo '<pre>';
+echo json_encode($data[0], JSON_PRETTY_PRINT);
+echo '</pre>';
 
 
 
