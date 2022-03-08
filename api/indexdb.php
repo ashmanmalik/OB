@@ -5,11 +5,12 @@
 
 $url = 'https://ashmanmalik.github.io/portifolio/data.json';
 $json = file_get_contents($url);
-var_dump(json_decode($json));
+$data = json_decode($json);
 
-// echo '<pre>';
-// echo json_encode($jo->location_formatted_address, JSON_PRETTY_PRINT);
-// echo '</pre>';
+
+echo '<pre>';
+echo json_encode($data["location_formatted_address"], JSON_PRETTY_PRINT);
+echo '</pre>';
 
 
 exit();
