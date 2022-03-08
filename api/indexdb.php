@@ -11,7 +11,10 @@ echo '<pre>';
 echo json_encode($data[0], JSON_PRETTY_PRINT);
 echo '</pre>';
 
-
+echo '<p>&nbsp;</p>';
+echo json_encode($data[0]->location_formatted_address);
+echo '<p>&nbsp;</p>';
+echo json_encode($data[0]["location_formatted_address"]);
 
 exit();
 exit; 
