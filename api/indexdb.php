@@ -1,12 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script type="text/javascript">
-	
-	var address = "4 Satellite Drive, Werribee, Victoria, 3030";
-
-	$.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+address, function(data){
-       console.log(data);
-    });
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <?php 
 // https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv
@@ -24,6 +16,19 @@ for ($j=0; $j < count($data); $j++ ) {
 	echo '<pre>';
 	echo json_encode($data[$j]->location_formatted_address, JSON_PRETTY_PRINT);
 	echo '</pre>';
+?>
+<script type="text/javascript">
+	
+	var address = <?php echo json_encode($data[$j]->location_formatted_address, JSON_PRETTY_PRINT); ?>;
+
+	$.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+address, function(data){
+       console.log(data);
+    });
+
+</script>
+
+
+<?php 	
 }
 // Now convert this to lat & lon
 
