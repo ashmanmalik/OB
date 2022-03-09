@@ -3,6 +3,7 @@
 <?php 
 // https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv
 // Converting csv to JSON and reading data...
+header('Access-Control-Allow-Origin: *');
 
 $url = 'https://ashmanmalik.github.io/portifolio/data.json';
 $json = file_get_contents($url);
