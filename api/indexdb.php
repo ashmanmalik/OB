@@ -3,7 +3,6 @@
 <?php 
 // https://ashmanmalik.github.io/portifolio/assets/data-1646700991936.csv
 // Converting csv to JSON and reading data...
-header('Access-Control-Allow-Origin: *');
 
 $url = 'https://ashmanmalik.github.io/portifolio/data.json';
 $json = file_get_contents($url);
@@ -19,7 +18,7 @@ for ($j=0; $j < count($data); $j++ ) {
 	echo '</pre>';
 ?>
 <script type="text/javascript">
-	
+<?php header('Access-Control-Allow-Origin: *'); ?>	
 	var address = <?php echo json_encode($data[$j]->location_formatted_address, JSON_PRETTY_PRINT); ?>;
 
 	$.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+address, function(data){
