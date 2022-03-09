@@ -16,36 +16,16 @@ $url = 'https://ashmanmalik.github.io/portifolio/data.json';
 $json = file_get_contents($url);
 $data = json_decode($json);
 
-echo '<pre>';
-echo json_encode($data[0], JSON_PRETTY_PRINT);
-echo '</pre>';
+// echo count($data);
+// echo '<p>&nbsp;</p>';
 
-echo count($data);
-echo '<p>&nbsp;</p>';
-echo json_encode($data[0]->location_formatted_address);
+for ($j=0; $j < count($data); $j++ ) { 
+
+	echo '<pre>';
+	echo json_encode($data[$j]->location_formatted_address, JSON_PRETTY_PRINT);
+	echo '</pre>';
+}
 // Now convert this to lat & lon
-
-$url = "http://maps.google.com/maps/api/geocode/json?address=".urlencode($data[0]->location_formatted_address);
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);    
-$responseJson = curl_exec($ch);
-curl_close($ch);
-
-$response = json_decode($responseJson);
-
-if ($response->status == 'OK') {
-    $latitude = $response->results[0]->geometry->location->lat;
-    $longitude = $response->results[0]->geometry->location->lng;
-
-    echo 'Latitude: ' . $latitude;
-    echo '<br />';
-    echo 'Longitude: ' . $longitude;
-} else {
-    echo $response->status;
-    var_dump($response);
-}    
 
 exit();
 exit; 
