@@ -20,6 +20,7 @@ echo '<pre>';
 echo json_encode($data[0], JSON_PRETTY_PRINT);
 echo '</pre>';
 
+echo count($data);
 echo '<p>&nbsp;</p>';
 echo json_encode($data[0]->location_formatted_address);
 // Now convert this to lat & lon
