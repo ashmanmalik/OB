@@ -87,14 +87,18 @@ $accounts = json_decode( $resp );
 	// 	["C820B6",-41.51285,173.53274]
 	// 	];
 
-        var map = L.map('map').setView([-33.899629, 151.0656538], 8);
+        var map = L.map('map').setView([-33.899629, 151.0656538], 13);
         mapLink = 
             '<a href="https://openstreetmap.org">OpenStreetMap</a>';
-        L.tileLayer(
-            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; ' + mapLink + ' Contributors',
-            maxZoom: 18,
-            }).addTo(map);
+        // L.tileLayer(
+        //     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //     attribution: '&copy; ' + mapLink + ' Contributors',
+        //     maxZoom: 18,
+        //     }).addTo(map);
+        // 
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		}).addTo(map);
 
 		for (var i = 0; i < planes.length; i++) {
 			marker = new L.marker([planes[i][1],planes[i][2]])
