@@ -10,9 +10,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Odan\Session\PhpSession;
 
-$foo = $session->get('foo');
+// Get all session variables
+$all = $session->all();
 
-echo $foo; 
+var_dump($all);
 
 exit; 
 
