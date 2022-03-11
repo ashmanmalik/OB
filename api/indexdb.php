@@ -17,18 +17,15 @@ $session = new PhpSession();
 // You can use all the standard PHP session configuration options
 // https://secure.php.net/manual/en/session.configuration.php
 
-$session->setOptions([
-    'name' => 'app',
-]);
+// $session->setOptions([
+//     'name' => 'app',
+// ]);
 
 // Start the session
 $session->start();
 
 // Set session value
 $session->set('bar', 'foo');
-
-// Get session value
-echo $session->get('bar'); // foo
 
 // Commit and close the session
 $session->save();
