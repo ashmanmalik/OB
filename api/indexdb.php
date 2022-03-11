@@ -27,6 +27,9 @@ $session->start();
 // Set session value
 $session->set('bar', 'foo');
 
+// Get session value
+echo $session->get('bar'); // foo
+
 // Commit and close the session
 $session->save();
 

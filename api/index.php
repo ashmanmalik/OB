@@ -2,6 +2,9 @@
 <?php 
 
 
+$foo = $session->get('foo');
+
+echo $foo; 
 
 $url = "https://au-api.basiq.io/users/".$_GET['user']."/transactions?filter=account.id.eq(".$_GET['accountno'].")";
 $curl = curl_init($url);
