@@ -2,9 +2,19 @@
 <?php 
 
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+// Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
+// // throw new RuntimeException('Hello Tracy!');
+// Including Oden https://odan.github.io/session/v5/
+
+use Odan\Session\PhpSession;
+
 $foo = $session->get('foo');
 
 echo $foo; 
+
+exit; 
 
 $url = "https://au-api.basiq.io/users/".$_GET['user']."/transactions?filter=account.id.eq(".$_GET['accountno'].")";
 $curl = curl_init($url);
