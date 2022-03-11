@@ -1,44 +1,41 @@
 <?php 
 
-require_once __DIR__ . '/../vendor/autoload.php';
+// require_once __DIR__ . '/../vendor/autoload.php';
 
-// Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
+// // Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
 
-// // throw new RuntimeException('Hello Tracy!');
+// // // throw new RuntimeException('Hello Tracy!');
 
-// Including Oden https://odan.github.io/session/v5/
+// // Including Oden https://odan.github.io/session/v5/
 
-use Odan\Session\PhpSession;
+// use Odan\Session\PhpSession;
 
-// Create a standard session hanndler
-$session = new PhpSession();
+// // Create a standard session hanndler
+// $session = new PhpSession();
 
-// Set session options before you start the session
-// You can use all the standard PHP session configuration options
-// https://secure.php.net/manual/en/session.configuration.php
+// // Set session options before you start the session
+// // You can use all the standard PHP session configuration options
+// // https://secure.php.net/manual/en/session.configuration.php
 
-$session->setOptions([
-    'name' => 'app',
-]);
+// $session->setOptions([
+//     'name' => 'app',
+// ]);
 
-// Start the session
-$session->start();
+// // Start the session
+// $session->start();
 
-// Set session value
-$session->set('bar', 'foo');
+// // Set session value
+// $session->set('bar', 'foo');
 
-// Get session value
-echo $session->get('bar'); // foo
+// // Get session value
+// echo $session->get('bar'); // foo
 
-// Commit and close the session
-$session->save();
+// // Commit and close the session
+// $session->save();
 
-$foo = $session->get('foo');
 
-echo $foo; 
-
-exit();
-exit; 
+// exit();
+// exit; 
 ?>
 
 

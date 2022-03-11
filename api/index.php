@@ -2,20 +2,20 @@
 <?php 
 
 
-require_once __DIR__ . '/../vendor/autoload.php';
+// require_once __DIR__ . '/../vendor/autoload.php';
 
-// Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
-// // throw new RuntimeException('Hello Tracy!');
-// Including Oden https://odan.github.io/session/v5/
+// // Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
+// // // throw new RuntimeException('Hello Tracy!');
+// // Including Oden https://odan.github.io/session/v5/
 
-use Odan\Session\PhpSession;
+// use Odan\Session\PhpSession;
 
-// Get all session variables
-$all = $session->all();
+// // Get all session variables
+// $all = $session->all();
 
-var_dump($all);
+// var_dump($all);
 
-exit; 
+// exit; 
 
 $url = "https://au-api.basiq.io/users/".$_GET['user']."/transactions?filter=account.id.eq(".$_GET['accountno'].")";
 $curl = curl_init($url);
@@ -41,6 +41,9 @@ $accounts = json_decode( $resp );
 	$enrich_data = $myObject["data"]; 
 	for ($i=0; $i<500; $i++) {
 	  if ($enrich_data[$i]["enrich"]["location"]) { 
+
+	  	echo json_encode($enrich_data[$i]["enrich"]["location"]);
+
 	    if($enrich_data[$i]["enrich"]["location"]["geometry"]) {
 	    	if ($enrich_data[$i]["enrich"]["location"]["geometry"]["lat"] != "" && $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"] != "") { 
 				$lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
@@ -60,7 +63,7 @@ $accounts = json_decode( $resp );
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Simple Map </title>
+    <title> Transactions Enriched Map </title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://d19vzq90twjlae.cloudfront.net/leaflet-0.7/leaflet.css" />
     <style type="text/css">
