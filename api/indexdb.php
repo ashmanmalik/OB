@@ -1,10 +1,10 @@
 <?php 
 
-require_once __DIR__ . '/../vendor/autoload.php';
+// require_once __DIR__ . '/../vendor/autoload.php';
 
-Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
+// Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
 
-throw new RuntimeException('Hello Tracy!');
+// // throw new RuntimeException('Hello Tracy!');
 
 // Including Oden https://odan.github.io/session/v5/
 
