@@ -42,16 +42,12 @@ $accounts = json_decode( $resp );
 	for ($i=0; $i<500; $i++) {
 	  if ($enrich_data[$i]["enrich"]["location"]) { 
 
-	  	echo '<pre>';
-	  	echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
-	  	echo '</pre>';
-
 	    if($enrich_data[$i]["enrich"]["location"]["geometry"]) {
 	    	if ($enrich_data[$i]["enrich"]["location"]["geometry"]["lat"] != "" && $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"] != "") { 
 				$lat = $enrich_data[$i]["enrich"]["location"]["geometry"]["lat"];
 		    	$lon = $enrich_data[$i]["enrich"]["location"]["geometry"]["lng"];
-		    	$planes[] = array("test", $lat, $lon);
-		      	
+		    	$businessName = $enrich_data[$i]["enrich"]["merchant"]["businessName"];
+		    	$planes[] = array($businessName, $lat, $lon);
 
 	    	}
 	    }
