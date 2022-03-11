@@ -17,9 +17,9 @@ $session = new PhpSession();
 // You can use all the standard PHP session configuration options
 // https://secure.php.net/manual/en/session.configuration.php
 
-// $session->setOptions([
-//     'name' => 'app',
-// ]);
+$session->setOptions([
+    'name' => 'app',
+]);
 
 // Start the session
 $session->start();
