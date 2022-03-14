@@ -20,9 +20,9 @@ curl_close($curl);
 $accounts = json_decode( $resp );
 
 // //Print the array in a simple JSON format
-// echo '<pre>';
-// echo json_encode($accounts, JSON_PRETTY_PRINT);
-// echo '</pre>';
+echo '<pre>';
+echo json_encode($accounts, JSON_PRETTY_PRINT);
+echo '</pre>';
 
 $myObject = json_decode($resp, true);
 $transaction_data = $myObject["data"];
