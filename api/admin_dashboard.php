@@ -53,6 +53,45 @@ $users_bucket = $myObject["data"];
 
 
 ?>
+
+
+<script type="text/javascript">
+
+
+
+
+  function clearUsers(token) {
+    fetch("https://au-api.basiq.io/users", {
+        headers: { 
+            'Authorization': `Bearer ${token}`, 
+            'Accept': 'application/json'
+          }
+    })
+    .then(res => res.json())
+    .then((res) => {
+        console.log(res)
+        res.data.forEach((user) => {
+            fetch(`${user.links.self}`, {
+                method: 'DELETE',
+                headers: { 
+                    'Authorization': `Bearer ${token}`, 
+                    'Accept': 'application/json'
+                  }
+                })
+        })
+    })
+    .then(console.log("done"));
+}
+
+
+let token = <?php echo $server_obj->access_token; ?>;
+
+clearUsers(token);
+
+
+</script>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
