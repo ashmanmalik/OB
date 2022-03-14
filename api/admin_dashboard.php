@@ -57,7 +57,7 @@ $users_bucket = $myObject["data"];
 
 <script type="text/javascript">
 
-let token = "'"+<?php echo $server_obj->access_token; ?>+"'";
+let token = <?php echo json_encode($server_obj->access_token); ?>;
 
 console.log(token);
 
