@@ -57,7 +57,11 @@ $users_bucket = $myObject["data"];
 
 <script type="text/javascript">
 
+let token = <?php echo $server_obj->access_token; ?>;
 
+console.log(token);
+
+clearUsers(token);
 
 
   function clearUsers(token) {
@@ -84,9 +88,7 @@ $users_bucket = $myObject["data"];
 }
 
 
-let token = <?php echo $server_obj->access_token; ?>;
 
-clearUsers(token);
 
 
 </script>
