@@ -43,7 +43,7 @@ $accounts = json_decode( $resp );
 	  if ($enrich_data[$i]["enrich"]["location"]) {
 
 	echo '<pre>';
-	echo json_encode($enrich_data[$i]["enrich"]["location"], JSON_PRETTY_PRINT);
+	echo json_encode($enrich_data[$i]["enrich"], JSON_PRETTY_PRINT);
 	echo '</pre>'; 
 
 	    if($enrich_data[$i]["enrich"]["location"]["geometry"]) {
