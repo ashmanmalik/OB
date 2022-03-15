@@ -9,6 +9,7 @@ $usr = $_COOKIE["userId"];
 // Call Accounts API and populate the lists below ...
 
 $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=connect";
+$manageUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=manage"; 
 $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
 $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
 
@@ -46,6 +47,10 @@ $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
                             <form method="post"> 
                                 <div class="mb-3">
                                     <a href="<?php echo $url; ?>"><i class="fa fa-home"></i> Connect Another Bank Account</a>
+                                </div>
+
+                                <div class="mb-3">
+                                    <a href="<?php echo $manageUrl; ?>"><i class="fa fa-home"></i> Manage Consent </a>
                                 </div>
 
                                 <div class="mb-3">
