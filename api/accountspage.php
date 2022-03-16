@@ -13,6 +13,38 @@ $manageUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&act
 $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
 $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
 
+
+// Use the User token and generate a new token:: 
+
+$url0 = "https://au-api.basiq.io/token";
+
+$curl0 = curl_init($url0);
+curl_setopt($curl0, CURLOPT_URL, $url0);
+curl_setopt($curl0, CURLOPT_POST, true);
+curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
+
+$headers0 = array(
+   "Content-Type: application/json",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw==",
+   "basiq-version: 3.0",
+);
+curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($usr).'}';
+curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
+
+//for debug only!
+curl_setopt($curl0, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl0, CURLOPT_SSL_VERIFYPEER, false);
+
+$client_token = curl_exec($curl0);
+curl_close($curl0);
+//var_dump($client_token);
+
+
+$client_obj = json_decode( $client_token );
+
+$newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->access_token."&action=connect";
+
 ?>
 
 <!DOCTYPE html>
