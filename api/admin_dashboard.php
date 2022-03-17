@@ -216,7 +216,10 @@ function chartData(table) {
 
 $('#deletingdata').on('click', function(event) {
     event.preventDefault();
+    console.log("button clicked");
     $.post('delete.php', {"userId" : uId, "token": tkn}, function(json) {
+      console.log("Response");
+
         // proccess results
     }, 'json');
 });
