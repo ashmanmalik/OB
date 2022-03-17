@@ -193,9 +193,8 @@ function chartData(table) {
               <td><?PHP echo $item["email"]; ?></td>
               <td><?PHP echo $item["mobile"]; ?></td>
               <td><?PHP echo $item["createdTime"]; ?></td>
-              <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a href="#" id="deletingdata"> Delete </a></td>
+              <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a id="deletingdata" href="delete.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Delete </a></td>
             </tr>
-
           <?php endforeach; ?>
         </tbody>
         <tfoot>
@@ -210,21 +209,6 @@ function chartData(table) {
     </table>
   </div>
 <script>
-  var uId = <?php echo json_encode($item["id"]); ?>;
-  var tkn = <?php echo json_encode($server_obj->access_token); ?>;
-
-
-$('#deletingdata').on('click', function(event) {
-    event.preventDefault();
-    console.log("button clicked");
-    $.post('delete.php', {"userId" : uId, "token": tkn}, function(json) {
-      console.log("Response");
-
-        // proccess results
-    }, 'json');
-});
-
-
 
 
 function myFunction() {
