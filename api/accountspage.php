@@ -63,15 +63,16 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
  -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<!--
     <script type="text/javascript">
         
-        var client_access_token = <?php echo json_encode($client_obj->access_token); ?>;
+        var client_access_token = <?php //echo json_encode($client_obj->access_token); ?>;
         sessionStorage.setItem("clientToken", client_access_token );
         var clientToken = sessionStorage.getItem("clientToken");
         console.log(clientToken); 
         //sessionStorage.clear(); // This will destroy session on Logout .. 
     </script>
+-->
 </head>
 
 <body>
