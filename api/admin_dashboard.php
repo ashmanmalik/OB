@@ -213,16 +213,14 @@ function chartData(table) {
   var uId = <?php echo json_encode($item["id"]); ?>;
   var tkn = <?php echo json_encode($server_obj->access_token); ?>;
 
-$(window).on('load', function() {
-  $('#deletingdata').click(function(event){
-     event.preventDefault(); // prevent default behavior of link click
-     // now make an AJAX request to server_side_file.php by passing some data
-     $.post('delete.php', {"userId" : uId, "token": tkn}, function(response){
-        //now you've got `response` from server, play with it like
-        alert(response);
-     });
-  });
+
+$('#deletingdata').on('click', function(event) {
+    event.preventDefault();
+    $.post('delete.php', {"userId" : uId, "token": tkn}, function(json) {
+        // proccess results
+    }, 'json');
 });
+
 
 
 
