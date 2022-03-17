@@ -57,39 +57,39 @@ $users_bucket = $myObject["data"];
 
 <script type="text/javascript">
 
-//This script will destroy your life 
+// This script will destroy your life 
 
 //let token = <?php //echo json_encode($server_obj->access_token); ?>;
 
-let token = "";
+// let token = "";
 
-// console.log(token);
+// // console.log(token);
 
-clearUsers(token);
+// clearUsers(token);
 
 
-  function clearUsers(token) {
-    fetch("https://au-api.basiq.io/users", {
-        headers: { 
-            'Authorization': `Bearer ${token}`, 
-            'Accept': 'application/json'
-          }
-    })
-    .then(res => res.json())
-    .then((res) => {
-        console.log(res)
-        res.data.forEach((user) => {
-            fetch(`${user.links.self}`, {
-                method: 'DELETE',
-                headers: { 
-                    'Authorization': `Bearer ${token}`, 
-                    'Accept': 'application/json'
-                  }
-                })
-        })
-    })
-    .then(console.log("done"));
-}
+//   function clearUsers(token) {
+//     fetch("https://au-api.basiq.io/users", {
+//         headers: { 
+//             'Authorization': `Bearer ${token}`, 
+//             'Accept': 'application/json'
+//           }
+//     })
+//     .then(res => res.json())
+//     .then((res) => {
+//         console.log(res)
+//         res.data.forEach((user) => {
+//             fetch(`${user.links.self}`, {
+//                 method: 'DELETE',
+//                 headers: { 
+//                     'Authorization': `Bearer ${token}`, 
+//                     'Accept': 'application/json'
+//                   }
+//                 })
+//         })
+//     })
+//     .then(console.log("done"));
+// }
 
 
 
