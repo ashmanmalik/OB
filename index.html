@@ -35,7 +35,7 @@
     </script>
     <style type="text/css">
         #loader {
-          display: none;
+/*          display: none;
           position: fixed;
           top: 0;
           left: 0;
@@ -43,7 +43,15 @@
           bottom: 0;
           width: 100%;
           background: rgba(0,0,0,0.75) url(loading2.gif) no-repeat center center;
-          z-index: 10000;
+          z-index: 10000;*/
+                    border: 16px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 16px solid silver;
+          border-bottom: 16px solid silver;
+          width: 50px;
+          height: 50px;
+          -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
         }
        #status {
           width: 200px;
@@ -131,7 +139,7 @@
     </form>
     </div>
 
-<div class="loader"></div>
+<div id="loader"></div>
 
 <script src="http://code.jquery.com/jquery.js"></script>
  
