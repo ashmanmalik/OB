@@ -193,7 +193,7 @@ function chartData(table) {
               <td><?PHP echo $item["email"]; ?></td>
               <td><?PHP echo $item["mobile"]; ?></td>
               <td><?PHP echo $item["createdTime"]; ?></td>
-              <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a id="deletingdata"> Delete </a></td>
+              <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a href="#" id="deletingdata"> Delete </a></td>
             </tr>
 
           <?php endforeach; ?>
@@ -213,14 +213,17 @@ function chartData(table) {
   var uId = <?php echo $item["id"]; ?>;
   var tkn = <?php echo $server_obj->access_token; ?>;
 
-$('#deletingdata').click(function(event){
-   event.preventDefault(); // prevent default behavior of link click
-   // now make an AJAX request to server_side_file.php by passing some data
-   $.post('delete.php', {"userId" : uId, "token": tkn}, function(response){
-      //now you've got `response` from server, play with it like
-      alert(response);
-   });
+$(document).load(function(){
+  $('#deletingdata').click(function(event){
+     event.preventDefault(); // prevent default behavior of link click
+     // now make an AJAX request to server_side_file.php by passing some data
+     $.post('delete.php', {"userId" : uId, "token": tkn}, function(response){
+        //now you've got `response` from server, play with it like
+        alert(response);
+     });
+  });
 });
+
 
 
 function myFunction() {
