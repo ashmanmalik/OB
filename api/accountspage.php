@@ -63,6 +63,13 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
  -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        
+        sessionStorage.setItem("client_access_token", <?php echo $client_obj->access_token; ?>);
+        let personName = sessionStorage.getItem("client_access_token");
+
+    </script>
 </head>
 
 <body>
@@ -78,7 +85,7 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
                             <h1 class="fs-4 card-title fw-bold mb-4"> PHP Integration with BASIQ </h1>
                             <form method="post"> 
                                 <div class="mb-3">
-                                    <a href="<?php echo $url; ?>"><i class="fa fa-home"></i> Connect Another Bank Account</a>
+                                    <a href="<?php echo $newurl; ?>"><i class="fa fa-home"></i> Connect Another Bank Account</a>
                                 </div>
 
                                 <div class="mb-3">
