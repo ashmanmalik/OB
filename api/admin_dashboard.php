@@ -213,7 +213,7 @@ function chartData(table) {
   var uId = <?php echo json_encode($item["id"]); ?>;
   var tkn = <?php echo json_encode($server_obj->access_token); ?>;
 
-$(document).load(function(){
+$(window).on('load', function() {
   $('#deletingdata').click(function(event){
      event.preventDefault(); // prevent default behavior of link click
      // now make an AJAX request to server_side_file.php by passing some data
