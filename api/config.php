@@ -116,9 +116,7 @@ header('Access-Control-Allow-Origin: location: '.$redirect_url.'');
 $response = new stdClass;
 $response->status = "success";
 $response->url = $redirect_url;
-die(json_encode($response));
 
-ob_end_flush(); 
 
 ?>
 
@@ -132,4 +130,10 @@ ob_end_flush();
 	sessionStorage.setItem("serverToken", sos);
 </script>
 
+<?php 
+die(json_encode($response));
+
+ob_end_flush(); 
+
+?>
 
