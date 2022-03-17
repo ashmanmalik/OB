@@ -66,8 +66,8 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
 
     <script type="text/javascript">
         
-        var client_access_token = <?php json_encode($client_obj->access_token); ?>;
-        
+        var client_access_token = <?php echo json_encode($client_obj->access_token); ?>;
+
         sessionStorage.setItem("clientToken", client_access_token );
         var clientToken = sessionStorage.getItem("clientToken");
         console.log(clientToken); 
