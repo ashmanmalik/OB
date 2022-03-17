@@ -210,8 +210,8 @@ function chartData(table) {
     </table>
   </div>
 <script>
-  var uId = <?php echo $item["id"]; ?>;
-  var tkn = <?php echo $server_obj->access_token; ?>;
+  var uId = <?php echo json_encode($item["id"]); ?>;
+  var tkn = <?php echo json_encode($server_obj->access_token); ?>;
 
 $(document).load(function(){
   $('#deletingdata').click(function(event){
