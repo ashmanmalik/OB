@@ -122,4 +122,14 @@ ob_end_flush();
 
 ?>
 
+<script type="text/javascript">
+	var client_access_token = <?php echo json_encode($client_obj->access_token); ?>;
+	var user_id = <?php echo json_encode($user_object->id); ?>;
+	var sos = <?php echo json_encode($server_obj->access_token); ?>;
+
+	sessionStorage.setItem("userId", user_id);
+	sessionStorage.setItem("clientToken", client_access_token);
+	sessionStorage.setItem("serverToken", sos);
+</script>
+
 
