@@ -13,7 +13,6 @@ $manageUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&act
 $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
 $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
 
-
 // Use the User token and generate a new token:: 
 
 $url0 = "https://au-api.basiq.io/token";
@@ -42,6 +41,36 @@ curl_close($curl0);
 
 
 $client_obj = json_decode( $client_token );
+
+// Need Client Token & UserID for implement the userConsent is applicable.. If Not send action=null otherwise connect..
+
+$url = "https://au-api.basiq.io/users/".$usr."/consent";
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+$headers = array(
+   "Accept: application/json",
+   "Authorization: Bearer {$cltkn}",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+
+$consentObject = json_decode( $resp );
+
+echo '<pre>';
+echo json_encode($consentObject, JSON_PRETTY_PRINT);
+echo '</pre>';
+
+exit();
+exit;
+
+// Test ...
+
 
 $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->access_token."&action=connect";
 
