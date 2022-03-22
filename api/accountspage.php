@@ -44,7 +44,7 @@ $client_obj = json_decode( $client_token );
 
 // Need Client Token & UserID for implement the userConsent is applicable.. If Not send action=null otherwise connect..
 
-$url = "https://au-api.basiq.io/users/".$usr."/consent";
+$url = "https://au-api.basiq.io/users/".$usr."/consents";
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
