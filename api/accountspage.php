@@ -66,9 +66,8 @@ echo '<pre>';
 echo json_encode($consentObject, JSON_PRETTY_PRINT);
 echo '</pre>';
 
-exit();
 exit;
-
+exit();
 // Test ...
 
 
