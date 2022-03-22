@@ -61,8 +61,7 @@ $resp = curl_exec($curl);
 curl_close($curl);
 
 $consentObject = json_decode( $resp, true );
-$CnSentObj = $consentObject["data"][0]->type;
-//$CnSentObj1 =  $consentObject["data"][0]["type"];
+$CnSentObj = $consentObject["data"][0]["type"];
 
 if ($CnSentObj == "error") { 
     echo "I am an error"; 
