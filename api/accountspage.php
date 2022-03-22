@@ -60,11 +60,16 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $resp = curl_exec($curl);
 curl_close($curl);
 
-$consentObject = json_decode( $resp );
+$consentObject = json_decode( $resp, true );
+$CnSentObj = $consentObject["data"][0]->type;
+//$CnSentObj1 =  $consentObject["data"][0]["type"];
 
-echo '<pre>';
-echo json_encode($consentObject, JSON_PRETTY_PRINT);
-echo '</pre>';
+if ($CnSentObj == "error") { 
+    echo "I am an error"; 
+} else { 
+    echo "I am a consent";
+}
+
 
 exit;
 exit();
