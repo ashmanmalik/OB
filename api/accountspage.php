@@ -65,17 +65,16 @@ $CnSentObj = $consentObject["data"][0]["type"];
 
 if ($CnSentObj == "error") { 
     echo "I am an error"; 
-} else { 
+    $action = null; 
+} else if ($CnSentObj == "consent") { 
     echo "I am a consent";
+    $action = "connect";
 }
 
-
-exit;
-exit();
-// Test ...
+var_dump($consentObject);
 
 
-$newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->access_token."&action=connect";
+$newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->access_token."&action=".$action;
 
 ?>
 
