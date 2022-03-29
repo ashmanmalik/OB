@@ -195,9 +195,16 @@ function chartData(table) {
               <td><?PHP echo $item["email"]; ?></td>
               <td><?PHP echo $item["mobile"]; ?></td>
               <td><?PHP echo $item["createdTime"]; ?></td>
-              <td><a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a id="deletingdata" href="delete.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Delete </a></td>
+              <td> <a href="accountspage.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Connect </a> | <a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a id="deletingdata" href="delete.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Delete </a></td>
             </tr>
-          <?php endforeach; ?>
+          <?php endforeach; 
+
+            setcookie("userId", $user_object->id , time() + 3600);
+            setcookie("clientToken", $client_obj->access_token , time() + 3600);
+            setcookie("serverToken", $server_obj->access_token , time() + 3600);
+
+
+          ?>
         </tbody>
         <tfoot>
             <tr>
