@@ -72,7 +72,7 @@ $headers0 = array(
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($user_object["data"][0]["id"]).'}';
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($myObject["data"][0]["id"]).'}';
 curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
 
 //for debug only!
