@@ -48,7 +48,7 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $resp = curl_exec($curl);
 curl_close($curl);
 
-$myObject = json_decode($resp, true);
+$myObject = json_decode($resp);
 $users_bucket = $myObject["data"];
 
 // This is to create a client Access token and Action in this case is always connect
