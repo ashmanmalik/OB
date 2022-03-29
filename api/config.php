@@ -3,7 +3,8 @@
 session_start(); 
 ob_start(); 
 
-$api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw=="; 
+// $api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw=="; 
+$api_Key = "YjZmMTY2NjYtYzc4Yy00YmY4LTliOGYtMjZkZGFiNmNmMGU4OmE2ODA3NjBkLTE0MzItNDg0NS04MmEzLTNjNzJhMzg4NzU0NQ=="; 
 // Validation needs to be added at some point here. (Server side Scripting)
 $email = $_POST['email'];
 $mobile = "+".$_POST['mobile'];
@@ -83,7 +84,7 @@ curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
 
 $headers0 = array(
    "Content-Type: application/json",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw==",
+   "Authorization: Basic YjZmMTY2NjYtYzc4Yy00YmY4LTliOGYtMjZkZGFiNmNmMGU4OmE2ODA3NjBkLTE0MzItNDg0NS04MmEzLTNjNzJhMzg4NzU0NQ==",
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
