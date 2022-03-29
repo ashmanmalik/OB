@@ -49,6 +49,7 @@ $resp = curl_exec($curl);
 curl_close($curl);
 
 
+$user_object = json_decode( $resp );
 $myObject = json_decode($resp, true);
 $users_bucket = $myObject["data"];
 
@@ -56,6 +57,34 @@ $users_bucket = $myObject["data"];
 
 // This is to create a client Access token and Action in this case is always connect
 
+// Calling token for Client_access EP to use it into Consent. 
+
+$url0 = "https://au-api.basiq.io/token";
+
+$curl0 = curl_init($url0);
+curl_setopt($curl0, CURLOPT_URL, $url0);
+curl_setopt($curl0, CURLOPT_POST, true);
+curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
+
+$headers0 = array(
+   "Content-Type: application/json",
+   "Authorization: Basic YjZmMTY2NjYtYzc4Yy00YmY4LTliOGYtMjZkZGFiNmNmMGU4OmE2ODA3NjBkLTE0MzItNDg0NS04MmEzLTNjNzJhMzg4NzU0NQ==",
+   "basiq-version: 3.0",
+);
+curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($user_object["data"][0]->id).'}';
+curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
+
+//for debug only!
+curl_setopt($curl0, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl0, CURLOPT_SSL_VERIFYPEER, false);
+
+$client_token = curl_exec($curl0);
+curl_close($curl0);
+//var_dump($client_token);
+
+
+$client_obj = json_decode( $client_token );
 
 
 // 
@@ -154,39 +183,6 @@ function chartData(table) {
         </thead>
          <tbody>
           <?php foreach($users_bucket as $key => $item): 
-
-
-
-// Calling token for Client_access EP to use it into Consent. 
-
-$url0 = "https://au-api.basiq.io/token";
-
-$curl0 = curl_init($url0);
-curl_setopt($curl0, CURLOPT_URL, $url0);
-curl_setopt($curl0, CURLOPT_POST, true);
-curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
-
-$headers0 = array(
-   "Content-Type: application/json",
-   "Authorization: Basic YjZmMTY2NjYtYzc4Yy00YmY4LTliOGYtMjZkZGFiNmNmMGU4OmE2ODA3NjBkLTE0MzItNDg0NS04MmEzLTNjNzJhMzg4NzU0NQ==",
-   "basiq-version: 3.0",
-);
-curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($item["id"]).'}';
-curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
-
-//for debug only!
-curl_setopt($curl0, CURLOPT_SSL_VERIFYHOST, false);
-curl_setopt($curl0, CURLOPT_SSL_VERIFYPEER, false);
-
-$client_token = curl_exec($curl0);
-curl_close($curl0);
-//var_dump($client_token);
-
-
-$client_obj = json_decode( $client_token );
-
-
           
           ?>
             <tr>
