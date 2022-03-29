@@ -48,8 +48,12 @@ curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 $resp = curl_exec($curl);
 curl_close($curl);
 
-$myObject = json_decode($resp);
+
+$user_object = json_decode( $resp );
+$myObject = json_decode($resp, true);
 $users_bucket = $myObject["data"];
+
+
 
 // This is to create a client Access token and Action in this case is always connect
 
@@ -68,7 +72,7 @@ $headers0 = array(
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
-$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($myObject->id).'}';
+$data0 = '{"scope": "CLIENT_ACCESS", "userId": '.json_encode($user_object->id).'}';
 curl_setopt($curl0, CURLOPT_POSTFIELDS, $data0);
 
 //for debug only!
