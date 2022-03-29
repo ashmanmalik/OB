@@ -85,8 +85,6 @@ $client_obj = json_decode( $client_token );
 
 // 
 
-$newurl = ;
-
 
 ?>
 
