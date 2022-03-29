@@ -186,7 +186,7 @@ function chartData(table) {
               <td><?PHP echo $item["email"]; ?></td>
               <td><?PHP echo $item["mobile"]; ?></td>
               <td><?PHP echo $item["createdTime"]; ?></td>
-              <td> <a href="https://consent.basiq.io/home?userId=<?php echo $item['id']; ?>&token=<?php echo $client_obj->access_token; ?>&action=connect" > Connect </a> | <a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a id="deletingdata" href="delete.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Delete </a></td>
+              <td> <a href="https://consent.basiq.io/home?userId=<?php echo $item["id"]; ?>&token=<?php echo $client_obj->access_token; ?>&action=connect" > Connect </a> | <a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a id="deletingdata" href="delete.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Delete </a></td>
             </tr>
           <?php endforeach; 
 
