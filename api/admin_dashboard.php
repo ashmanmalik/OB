@@ -55,49 +55,6 @@ $users_bucket = $myObject["data"];
 ?>
 
 
-<script type="text/javascript">
-
-// This script will destroy your life 
-
-//let token = <?php //echo json_encode($server_obj->access_token); ?>;
-
-// let token = "";
-
-// // console.log(token);
-
-// clearUsers(token);
-
-
-//   function clearUsers(token) {
-//     fetch("https://au-api.basiq.io/users", {
-//         headers: { 
-//             'Authorization': `Bearer ${token}`, 
-//             'Accept': 'application/json'
-//           }
-//     })
-//     .then(res => res.json())
-//     .then((res) => {
-//         console.log(res)
-//         res.data.forEach((user) => {
-//             fetch(`${user.links.self}`, {
-//                 method: 'DELETE',
-//                 headers: { 
-//                     'Authorization': `Bearer ${token}`, 
-//                     'Accept': 'application/json'
-//                   }
-//                 })
-//         })
-//     })
-//     .then(console.log("done"));
-// }
-
-
-
-
-
-</script>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,11 +155,6 @@ function chartData(table) {
               <td> <a href="accountspage.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Connect </a> | <a href="listaccounts.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> View accounts </a> | <a id="deletingdata" href="delete.php?userId=<?php echo $item["id"]; ?>&token=<?php echo $server_obj->access_token ?>"> Delete </a></td>
             </tr>
           <?php endforeach; 
-
-            setcookie("userId", $user_object->id , time() + 3600);
-            setcookie("clientToken", $client_obj->access_token , time() + 3600);
-            setcookie("serverToken", $server_obj->access_token , time() + 3600);
-
 
           ?>
         </tbody>
