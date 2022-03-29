@@ -54,6 +54,15 @@ $myObject = json_decode($resp, true);
 $users_bucket = $myObject["data"];
 
 
+echo '<pre>';
+echo json_encode($user_object, JSON_PRETTY_PRINT);
+echo '</pre>';
+
+echo json_encode($user_object->id);
+
+exit;
+exit();
+
 
 // This is to create a client Access token and Action in this case is always connect
 
