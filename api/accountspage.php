@@ -5,6 +5,9 @@
 $cltkn = $_COOKIE["clientToken"];
 $svr = $_COOKIE["serverToken"];
 $usr = $_COOKIE["userId"]; 
+$job = $_GET['jobId'];
+
+echo $job; 
 
 
 // Call Accounts API and populate the lists below ...
@@ -124,6 +127,7 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
                                 <div class="mb-3">
                                     <a href="<?php echo $manageUrl; ?>"><i class="fa fa-home"></i> Manage Consent </a>
                                 </div>
+
 
                                 <div class="mb-3">
                                 <a href="<?php echo $svrurl; ?>"><i class="fa fa-bars"></i> Accounts</a>
