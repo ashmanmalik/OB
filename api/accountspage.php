@@ -7,6 +7,8 @@ $svr = $_COOKIE["serverToken"];
 $usr = $_COOKIE["userId"]; 
 $job = $_GET['jobId'];
 
+echo $job;
+
 // Call Accounts API and populate the lists below ...
 
 $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=connect";
@@ -74,31 +76,6 @@ if ($CnSentObj == "error") {
 
 
 $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->access_token."&action=".$action;
-
-// -- --------- -----------------  ------------------------------------------
-
-// Retrieving a Job based on the Job id: 
-
-// $urlforjob = "https://au-api.basiq.io/jobs/".$job;
-
-// $curler = curl_init($urlforjob);
-// curl_setopt($curler, CURLOPT_URL, $urlforjob);
-// curl_setopt($curler, CURLOPT_RETURNTRANSFER, true);
-
-// $headersOne = array(
-//    "Accept: application/json",
-//    "Authorization: Bearer {$svr}",
-// );
-
-// curl_setopt($curler, CURLOPT_HTTPHEADER, $headersOne);
-// //for debug only!
-// curl_setopt($curler, CURLOPT_SSL_VERIFYHOST, false);
-// curl_setopt($curler, CURLOPT_SSL_VERIFYPEER, false);
-
-// $resp_job = curl_exec($curler);
-// curl_close($curler);
-// var_dump($resp_job);
-
 
 ?>
 
