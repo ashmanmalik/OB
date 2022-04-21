@@ -78,7 +78,6 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
 // -- --------- -----------------  ------------------------------------------
 
 // Retrieving a Job based on the Job id: 
-if ($job != "") { 
 
 $urlforjob = "https://au-api.basiq.io/jobs/".$job;
 
@@ -99,9 +98,6 @@ curl_setopt($curler, CURLOPT_SSL_VERIFYPEER, false);
 $resp_job = curl_exec($curler);
 curl_close($curler);
 var_dump($resp_job);
-
-
-}
 
 
 ?>
