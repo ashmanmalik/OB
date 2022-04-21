@@ -47,6 +47,9 @@ curl_setopt($curls, CURLOPT_URL, $urls);
 curl_setopt($curls, CURLOPT_POST, true);
 curl_setopt($curls, CURLOPT_RETURNTRANSFER, true);
 
+var_dump($server_obj);
+exit; 
+
 $headerss = array(
    "Authorization: Bearer {$server_obj->access_token}",
    "Content-Type: application/json",
