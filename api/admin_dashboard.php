@@ -19,15 +19,17 @@ curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-$resp = curl_exec($curl);
+$server_token = curl_exec($curl);
 curl_close($curl);
-var_dump($resp);
+
+
+$server_obj = json_decode( $server_token );
+
+var_dump($server_obj); 
+
 
 exit();
-exit; 
-
- 
-// Fetch All users below: 
+exit;
 
 
 $url = "https://au-api.basiq.io/users";
