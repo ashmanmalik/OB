@@ -25,7 +25,9 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
-var_dump($server_obj); 
+var_dump($server_obj);
+
+echo $server_obj->access_token; 
 
 
 exit();
