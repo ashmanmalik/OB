@@ -40,7 +40,7 @@ $server_obj = json_decode( $server_token );
 
 //Print the array in a simple JSON format
 echo '<pre>';
-echo json_encode($server_obj, JSON_PRETTY_PRINT);
+echo json_encode($server_token, JSON_PRETTY_PRINT);
 echo '</pre>';
 
 // Calling user EP to generate a user using token. 
