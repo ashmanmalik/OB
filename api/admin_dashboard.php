@@ -9,22 +9,22 @@ curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 $headers = array(
-   "Content-Type: application/x-www-form-urlencoded",
    "basiq-version: 3.0",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw==",
+   "Content-Type: application/x-www-form-urlencoded",
+   "Authorization: Basic NDI3YzE0MmQtNWZiNC00ZjQ5LWExNGEtMTQ2ZThhMDUyZWNlOjhjYWM4YTg3LTRmNDctNDJjMC1hZTQzLWIwYTk3YzgxODE3Zg==",
    "Content-Length: 0",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-$data = '{"scope": "SERVER_ACCESS"}';
-curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
 //for debug only!
 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-$server_token = curl_exec($curl);
+$resp = curl_exec($curl);
 curl_close($curl);
+var_dump($resp);
 
-$server_obj = json_decode( $server_token );
+exit();
+exit; 
 
  
 // Fetch All users below: 
