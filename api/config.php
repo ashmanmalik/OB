@@ -5,16 +5,16 @@ ob_start();
 
  $api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjI4MmJhNWEyLTlhODYtNDU4ZS05MTRmLTlhODFmYWE0MzE0OA=="; 
 
-if (!empty($_POST['email'])) {
-   $email = $_POST['email'];
-}
+// if (!empty($_POST['email'])) {
+//    $email = $_POST['email'];
+// }
 
-if (!empty($_POST['mobile'])) {
-   $mobile = "+".$_POST['mobile'];
-}
+// if (!empty($_POST['mobile'])) {
+//    $mobile = "+".$_POST['mobile'];
+// }
 
-$email = $_GET['email'];
-$mobile = "+".$_GET['mobile'];
+echo $email = $_GET['email'];
+echo $mobile = "+".$_GET['mobile'];
 // Calling Token EP  once when a request is made. 
 $url = "https://au-api.basiq.io/token";
 
