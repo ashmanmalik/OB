@@ -4,8 +4,6 @@ session_start();
 ob_start(); 
 
  $api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw=="; 
-//$api_Key = "YjZmMTY2NjYtYzc4Yy00YmY4LTliOGYtMjZkZGFiNmNmMGU4OmE2ODA3NjBkLTE0MzItNDg0NS04MmEzLTNjNzJhMzg4NzU0NQ=="; 
-// Validation needs to be added at some point here. (Server side Scripting)
 
 if (!empty($_POST['email'])) {
    $email = $_POST['email'];
@@ -15,7 +13,8 @@ if (!empty($_POST['mobile'])) {
    $mobile = "+".$_POST['mobile'];
 }
 
-
+$email = $_GET['email'];
+$mobile = "+".$_GET['mobile'];
 // Calling Token EP  once when a request is made. 
 $url = "https://au-api.basiq.io/token";
 
