@@ -27,7 +27,7 @@ curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
 
 $headers0 = array(
    "Content-Type: application/json",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw==",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjgxM2RhNDc3LTU5YjEtNDFlOS1iOGE5LWM5MzExMDRmNDI5OQ==",
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
@@ -95,16 +95,7 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
  -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!--
-    <script type="text/javascript">
-        
-        var client_access_token = <?php //echo json_encode($client_obj->access_token); ?>;
-        sessionStorage.setItem("clientToken", client_access_token );
-        var clientToken = sessionStorage.getItem("clientToken");
-        console.log(clientToken); 
-        //sessionStorage.clear(); // This will destroy session on Logout .. 
-    </script>
--->
+
 </head>
 
 <body>

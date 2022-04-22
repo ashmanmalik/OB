@@ -11,7 +11,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $headers = array(
    "basiq-version: 3.0",
    "Content-Type: application/x-www-form-urlencoded",
-   "Authorization: Basic NDI3YzE0MmQtNWZiNC00ZjQ5LWExNGEtMTQ2ZThhMDUyZWNlOjhjYWM4YTg3LTRmNDctNDJjMC1hZTQzLWIwYTk3YzgxODE3Zg==",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjgxM2RhNDc3LTU5YjEtNDFlOS1iOGE5LWM5MzExMDRmNDI5OQ==",
    "Content-Length: 0",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -64,7 +64,7 @@ curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
 
 $headers0 = array(
    "Content-Type: application/json",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw==",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjgxM2RhNDc3LTU5YjEtNDFlOS1iOGE5LWM5MzExMDRmNDI5OQ==",
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);

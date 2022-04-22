@@ -3,7 +3,7 @@
 session_start(); 
 ob_start(); 
 
- $api_Key = "NDI3YzE0MmQtNWZiNC00ZjQ5LWExNGEtMTQ2ZThhMDUyZWNlOjhjYWM4YTg3LTRmNDctNDJjMC1hZTQzLWIwYTk3YzgxODE3Zg=="; 
+ $api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjgxM2RhNDc3LTU5YjEtNDFlOS1iOGE5LWM5MzExMDRmNDI5OQ=="; 
 
  $email = $_POST['email'];
  $mobile = "+".$_POST['mobile'];
@@ -18,7 +18,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $headers = array(
    "basiq-version: 3.0",
    "Content-Type: application/x-www-form-urlencoded",
-   "Authorization: Basic NDI3YzE0MmQtNWZiNC00ZjQ5LWExNGEtMTQ2ZThhMDUyZWNlOjhjYWM4YTg3LTRmNDctNDJjMC1hZTQzLWIwYTk3YzgxODE3Zg==",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjgxM2RhNDc3LTU5YjEtNDFlOS1iOGE5LWM5MzExMDRmNDI5OQ==",
    "Content-Length: 0",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -51,7 +51,7 @@ curl_setopt($curls, CURLOPT_POST, true);
 curl_setopt($curls, CURLOPT_RETURNTRANSFER, true);
 
 $headerss = array(
-   "Authorization: Bearer {$server_obj->access_token}",
+   "Authorization: Bearer $server_obj->access_token",
    "Content-Type: application/json",
 );
 curl_setopt($curls, CURLOPT_HTTPHEADER, $headerss);
@@ -87,7 +87,7 @@ curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
 
 $headers0 = array(
    "Content-Type: application/json",
-   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOmEyOTA0YjcyLTc0ZjctNDIxOC04ZmIxLTYwZWRmZmEwYjU0Mw==",
+   "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjgxM2RhNDc3LTU5YjEtNDFlOS1iOGE5LWM5MzExMDRmNDI5OQ==",
    "basiq-version: 3.0",
 );
 curl_setopt($curl0, CURLOPT_HTTPHEADER, $headers0);
