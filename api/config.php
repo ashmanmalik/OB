@@ -49,6 +49,10 @@ echo '<pre>';
 echo json_encode($server_token, JSON_PRETTY_PRINT);
 echo '</pre>';
 
+
+exit();
+exit; 
+
 // Calling user EP to generate a user using token. 
 
 $urls = "https://au-api.basiq.io/users";
