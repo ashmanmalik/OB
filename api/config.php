@@ -38,6 +38,11 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
+//Print the array in a simple JSON format
+echo '<pre>';
+echo json_encode($server_obj, JSON_PRETTY_PRINT);
+echo '</pre>';
+
 // Calling user EP to generate a user using token. 
 
 $urls = "https://au-api.basiq.io/users";
@@ -46,9 +51,6 @@ $curls = curl_init($urls);
 curl_setopt($curls, CURLOPT_URL, $urls);
 curl_setopt($curls, CURLOPT_POST, true);
 curl_setopt($curls, CURLOPT_RETURNTRANSFER, true);
-
-var_dump($server_obj);
-exit; 
 
 $headerss = array(
    "Authorization: Bearer {$server_obj->access_token}",
