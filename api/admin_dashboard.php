@@ -25,14 +25,6 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
-var_dump($server_obj);
-
-echo $server_obj->access_token; 
-
-
-exit();
-exit;
-
 
 $url = "https://au-api.basiq.io/users";
 
@@ -42,7 +34,7 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
 $headers = array(
    "Accept: application/json",
-   "Authorization: Bearer {$server_obj->access_token}",
+   "Authorization: Bearer $server_obj->access_token",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
 //for debug only!
