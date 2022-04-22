@@ -1,12 +1,12 @@
 <?php 
 
-// session_start(); 
-// ob_start(); 
+session_start(); 
+ob_start(); 
 
- $api_Key = "NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjI4MmJhNWEyLTlhODYtNDU4ZS05MTRmLTlhODFmYWE0MzE0OA=="; 
+ $api_Key = "NDI3YzE0MmQtNWZiNC00ZjQ5LWExNGEtMTQ2ZThhMDUyZWNlOjhjYWM4YTg3LTRmNDctNDJjMC1hZTQzLWIwYTk3YzgxODE3Zg=="; 
 
-echo $email = $_GET['email'];
-echo $mobile = "+".$_GET['mobile'];
+echo $email = $_POST['email'];
+echo $mobile = "+".$_POST['mobile'];
 // Calling Token EP  once when a request is made. 
 $url = "https://au-api.basiq.io/token";
 
@@ -15,18 +15,13 @@ curl_setopt($curl, CURLOPT_URL, $url);
 curl_setopt($curl, CURLOPT_POST, true);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-// Need to Store the API key in the database. 
-
 $headers = array(
-   "Content-Type: application/x-www-form-urlencoded",
    "basiq-version: 3.0",
-   "Authorization: Basic {$api_Key}",
+   "Content-Type: application/x-www-form-urlencoded",
+   "Authorization: Basic NDI3YzE0MmQtNWZiNC00ZjQ5LWExNGEtMTQ2ZThhMDUyZWNlOjhjYWM4YTg3LTRmNDctNDJjMC1hZTQzLWIwYTk3YzgxODE3Zg==",
    "Content-Length: 0",
 );
 curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-$data = '{"scope": "SERVER_ACCESS"}';
-curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
 //for debug only!
 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
@@ -36,14 +31,14 @@ curl_close($curl);
 
 $server_obj = json_decode( $server_token );
 
-//Print the array in a simple JSON format
-echo '<pre>';
-echo json_encode($server_token, JSON_PRETTY_PRINT);
-echo '</pre>';
+// //Print the array in a simple JSON format
+// echo '<pre>';
+// echo json_encode($server_token, JSON_PRETTY_PRINT);
+// echo '</pre>';
 
 
-exit();
-exit; 
+// exit();
+// exit; 
 
 
 // Calling user EP to generate a user using token. 
