@@ -123,14 +123,18 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
                                 <a href="<?php echo $svrurl; ?>"><i class="fa fa-bars"></i> Accounts</a>
                                 </div>
 
+                                <div class="mb-3">
+                                <a href="indexdb.php?<?php echo $job; ?>"><i class="fa fa-bars"></i> Affordability Report </a>
+                                </div>
+
+
+
                                 <div class="d-flex align-items-center">
                                     <a href="<?php echo $trv_url; ?>"><i class="fa fa-th-list"></i> Transactions</a>
                                 </div>
 
-                                <div class="mb-3">
-                                <a href="indexdb.php"><i class="fa fa-bars"></i> Affordability Report </a>
-                                </div>
 
+                                
 
                             </form>                            
                         </div>
