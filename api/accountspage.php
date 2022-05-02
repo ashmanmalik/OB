@@ -7,7 +7,7 @@ $svr = $_COOKIE["serverToken"];
 $usr = $_COOKIE["userId"]; 
 $job = $_GET['jobId'];
 
-echo $job;
+//echo $job;
 
 // Call Accounts API and populate the lists below ...
 
@@ -126,6 +126,12 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
                                 <div class="d-flex align-items-center">
                                     <a href="<?php echo $trv_url; ?>"><i class="fa fa-th-list"></i> Transactions</a>
                                 </div>
+
+                                <div class="mb-3">
+                                <a href="indexdb.php"><i class="fa fa-bars"></i> Affordability Report </a>
+                                </div>
+
+
                             </form>                            
                         </div>
                         <div class="card-footer py-3 border-0">
