@@ -1,0 +1,699 @@
+
+        /* http://meyerweb.com/eric/tools/css/reset/  v2.0 | 20110126  License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1.3;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+/**
+* For modern browsers
+*/
+.cf:before,
+.cf:after {
+content: " "; /* 1 */
+display: table; /* 2 */
+}
+.cf:after {
+clear: both;
+}
+/**
+* For IE 6/7 only
+*/
+.cf {
+*zoom: 1;
+}
+.account-details-heading {
+display: inline-block;
+width: 140px;
+}
+.account-details-value {
+display: inline-block;
+width: 250px;
+}
+.account-balance-heading {
+display: inline-block;
+width: 50%;
+}
+.account-balance-amount {
+width: 50%;
+text-align: right;
+display: inline-block;
+}
+.light-grey {
+color: gray;
+}
+.dark-blue {
+color: #404040;
+}
+.neg-balance {
+color: #990000;
+}
+.account-details-line {
+margin-bottom: 5px;
+}
+.account-balance-line {
+margin-bottom: 5px;
+}
+body {
+font-family: 'Roboto', sans-serif;
+font-weight: 300;
+font-size: 11px;
+color: #000000;
+}
+.section-inner-summary-header {
+display: inline-block; width: 25%;
+}
+.section-inner-summary-header-title {
+width: 60%;
+display: inline-block;
+}
+.section-inner-sumamry-info {
+width: 40%;
+display: inline-block;
+}
+#transaction-table tr td, .category-group-summary-area table tr td {
+padding-bottom: 7px;
+padding-right: 3px;
+/*border-right: solid #ffffff 10px;*/
+vertical-align: middle;
+}
+.summary-transaction-table td {
+vertical-align: middle;
+}
+#transaction-table tbody tr {
+page-break-inside: avoid:
+}
+#transaction-table tbody tr, .sacc-loans-summary-area table tbody tr {
+background-color: #FBFAF9;
+}
+.transaction-data-credit {
+background-color: #f1f1f1;
+}
+#transaction-table tbody tr td:last-child, .sacc-loans-summary-area table tbody tr td:last-child{
+border-right: none;
+}
+#transaction-table td.transaction-data-indicator {
+color: #FBFAF9;
+}
+#transaction-table tbody tr:nth-child(odd) td.transaction-data-indicator {
+color: #FFFFFF;
+}
+#transaction-table tbody tr:nth-child(even) td.transaction-data-indicator {
+color: #FBFAF9;
+}
+.sacc-loans-summary-area table tbody tr:nth-child(odd), #transaction-table tbody tr:nth-child(odd) {
+background-color: white;
+}
+.sacc-loans-summary-area table tbody tr:nth-child(even), #transaction-table tbody tr:nth-child(even) {
+background-color: #FBFAF9;
+}
+.transactions-summary {
+width: 87%;
+margin-left: 13%;
+}
+.transaction-summary-description {
+width: 60%;
+}
+.transaction-summary-date, .transaction-summary-amount {
+width: 25%;
+}
+tr.is-credit {
+font-weight: 500;
+}
+.transaction-data-credit, .transaction-data-debit, .transaction-data-credit-heading {
+text-align: right;
+}
+.transaction-data-date {
+width: 12%;
+}
+.transaction-data-credit, .transaction-data-debit, .transaction-data-amount, .transaction-data-credit-heading {
+width: 15%;
+}
+.transaction-data-amount, .transaction-summary-date, .transaction-summary-amount {
+text-align: right;
+}
+.transaction-data-description {
+width: 42%;
+}
+.transaction-data-indicator {
+width: 1%;
+}
+.heading {
+padding-top: 6px;
+padding-bottom: 6px;
+display: inline-block;
+border-bottom: solid 3px #8c2980;
+}
+.table {
+padding: 10px 0 0 10px;
+}
+.sacc-loans-summary-area { padding: 4px 0 0 10px; }
+.htmlVersion .category-group-summary-inner > div { display: none; width: 100%; box-sizing: border-box; }
+.htmlVersion .category-group-summary-inner > div.heading,
+.htmlVersion .category-group-summary-inner > div.expanded { display: inline-block; }
+.htmlVersion .summary-transaction-table { display: none; }
+.table,
+.sacc-loans-summary-area { border-left: solid 3px #8c2980; }
+.transactions-summary tr td, .sacc-loans-summary-area tr td, .sacc-loans-summary-area span {
+padding-bottom: 5px;
+padding-top: 3px;
+vertical-align: top;
+}
+.transactions-summary tr td, .sacc-loans-summary-area tr td {
+vertical-align: middle;
+}
+.transactions-summary tr td:last-child, .sacc-loans-summary-area tr td:last-child {
+padding-bottom: 7px;
+}
+.transactions-summary thead, #transaction-table thead, .analysis-heading, .sacc-loans-summary-area thead, .sacc-loans-summary-area .inner-header {
+color: #676843;
+}
+.analysis-heading-main {
+color: #676843;
+}
+.padding {
+padding-top: 20px;
+}
+.analysis {
+margin-bottom: 20px;
+page-break-inside: avoid;
+}
+.analysis div:not(.summary-provider) {
+padding-bottom: 7px;
+display: inline-block;
+}
+.summary-provider {
+margin-bottom: 7px;
+width: 100%;
+display: block
+}
+.one-hundred {
+width: 87%;
+}
+.one-third {
+width: 29%;
+}
+.summary-left {
+padding-left: 13%;
+}
+.dark-blue-font {
+color: #404040;
+}
+.heading > span {
+font-size: 18px;
+padding-right: 10px;
+cursor: pointer;
+white-space: nowrap;
+position: relative;
+color: #404040;
+}
+.heading > .noExpand {cursor: auto;}
+.heading > span:after,
+.htmlVersion .heading > .noExpand:after { display: none; }
+.htmlVersion .heading > span:after{
+content: '\25BC';
+font-size: 10px;
+position: absolute;
+top: 5px;
+right: -10px;
+display:block;
+}
+.htmlVersion .heading  > .expanded:after {
+content: '\25B2';
+}
+.heading .account-number-label {
+font-size: 14px;
+font-weight: 500;
+display: inline;
+}
+#transaction-table {
+width: 100%;
+}
+#transaction-table tbody tr:target {
+border-top: 5px solid #FF7D86;
+background-color: #FF7D86;
+}
+#transaction-table tbody tr:target td.transaction-data-credit {
+background-color: #FF7D86;
+}
+#transaction-table tbody tr:target td.transaction-data-date {
+padding-left:3px;
+}
+.credit-column {
+background-color:#f1f1f1 !important;
+}
+.transaction-data-credit-heading {
+background-color: white;
+}
+#top-bar {
+height:15px;
+background-color: #f1f1f1;
+margin-top: 20px;
+}
+.summary-transaction-table:last-child {
+margin-bottom: 20px;
+}
+#logo-section {
+width: 95%;
+border-left: none;
+border-bottom: none;
+background-color: white;
+}
+#logo-section img {
+max-width: 138px;
+}
+#logo-section > div {
+width: 342px;
+height: auto;
+margin-left: 4%;
+padding-top: 15px;
+padding-bottom: 15px;
+max-width: 40%;
+}
+#logo-section svg {
+width: 342px;
+height: 54px;
+}
+#account-details {
+margin-top: -2px;
+background: white;
+font-size:12px;
+clear: both;
+}
+.table-left {
+float:left;
+width:49%;
+}
+.table-right {
+float:right;
+width:49%;
+}
+#account-details table {width: 100%;}
+#account-details td{vertical-align: top;}
+#account-section {
+padding-left: 5%;
+}
+#account-summary{
+clear: both;
+padding-top: 5px;
+font-size:12px;
+}
+#account-summary table {
+width: 100%;
+table-layout: fixed;
+}
+#account-summary td {
+background-color: #8dc3ec;
+color: #000;
+text-align: center;
+padding: 5px;
+border: #fff 1px solid;
+}
+.headerInnerWrapper{
+margin-right:5%;
+}
+#additional-data-summary {
+padding-top: 5px;
+border-top: solid 1px #ccc;
+clear: both;
+}
+#additional-data-summary table {
+width: 100%;
+}
+#account-section .inner-header {
+width: 170px;
+display: inline-block;
+margin-bottom: 5px;
+}
+#account-section .inner-value {
+width: 220px;
+display: inline-block;
+margin-bottom: 5px;
+}
+.genericErrorMsg {font-size: 20px; font-weight: bold; text-align: center; display:inline-block; width: 100%;}
+#primary-transaction-section {margin: 15px 5% 0 5%; page-break-before: auto;}
+.category-group-summary {margin: 15px 0 0 5%; page-break-before: auto;}
+.category-group-summary-inner {overflow: hidden;}
+.nobr {white-space:nowrap;}
+.category-group-summary-inner .heading {width: 100%;}
+#transaction-table .Gambling > .transaction-data-indicator,
+#transaction-table .Dishonours > .transaction-data-indicator,
+#transaction-table .Loans > .transaction-data-indicator,
+#transaction-table .PayTV > .transaction-data-indicator,
+#transaction-table .Phone > .transaction-data-indicator {
+color: #F48063 !important;
+}
+#transaction-table .Wages > .transaction-data-indicator,
+#transaction-table .Interest > .transaction-data-indicator {
+color: #CBE2A4 !important;
+}
+#transaction-table .Centrelink > .transaction-data-indicator { color: #99D6D0 !important; }
+#transaction-table .Rent > .transaction-data-indicator { color: #99D6D0 !important; }
+.SAACLoan .transaction-data-indicator { color: #F48063 !important; }
+@media all {
+body{ max-width: 900px; }
+.page-break { display: none; }
+.toggle-box { display: none; }
+.toggle-box + label {
+cursor: pointer;
+display: block;
+font-weight: bold;
+line-height: 21px;
+margin-bottom: 5px;
+}
+.toggle-box + label:after { content: "Show Transactions   \25BC"; }
+.displayed label:after { content: "Hide Transactions   \25B2"; }
+.htmlVersion .displayed table{display:block}
+.htmlVersion .hidden table{display:none}
+.toggleAll {
+margin: 15px 5% 0 5%;
+display: inline-block;
+font-size: 18px;
+padding-right: 10px;
+cursor: pointer;
+white-space: nowrap;
+position: relative;
+font-weight: 400;
+}
+.htmlVersion .toggleAll:after { content: "Expand All Groups   \25BC"; }
+.htmlVersion .expanded .toggleAll:after { content: "Collapse All Groups   \25B2"; }
+.htmlVersion #glossaryHeader:after { content: "   \25BC"; }
+.htmlVersion #glossaryContent {display:none;}
+.htmlVersion .expanded #glossaryHeader:after { content: "   \25B2"; }
+.htmlVersion .expanded #glossaryContent {display:block;}
+.clickToExpand {display:none;}
+}
+@media print {
+.page-break { display: block; page-break-before: always; }
+.toggle-box + label:after { display:none; }
+.toggleAll { display:none; }
+.clickToExpand {display:none;}
+}
+.accounts-summary {
+font-size:12px;
+}
+body{
+margin:0px auto;
+}
+.line-chart,
+.htmlVersion .line-chart-pdf{
+height:200px;
+width:760px;
+}
+.line-chart-pdf{
+height:198px;
+width:684px;
+}
+.dount-chart-container{
+background: #eee;
+padding: 5px 10px;
+margin: 0 0 10px;
+display: inline-block;
+vertical-align: top;
+}
+#donut1 .ct-series-a .ct-slice-donut {
+stroke: #31ff90;
+}
+#donut1 .ct-series-b .ct-slice-donut {
+stroke: #eee;
+}
+#donut2 .ct-series-a .ct-slice-donut {
+stroke: #3199f0;
+}
+#donut2 .ct-series-b .ct-slice-donut {
+stroke: #54aaf1;
+}
+#donut2 .ct-series-c .ct-slice-donut {
+stroke: #77bbf2;
+}
+#donut2 .ct-series-d .ct-slice-donut {
+stroke: #9accf3;
+}
+#donut2 .ct-series-e .ct-slice-donut {
+stroke: #bbddf4;
+}
+#donut2 .ct-series-f .ct-slice-donut {
+stroke: #ddeef5;
+}
+#donut3 .ct-series-a .ct-slice-donut {
+stroke: #f03199;
+}
+#donut3 .ct-series-b .ct-slice-donut {
+stroke: #f154aa;
+}
+#donut3 .ct-series-c .ct-slice-donut {
+stroke: #f277bb;
+}
+#donut3 .ct-series-d .ct-slice-donut {
+stroke: #f39acc;
+}
+#donut3 .ct-series-e .ct-slice-donut {
+stroke: #f4bbdd;
+}
+#donut3 .ct-series-f .ct-slice-donut {
+stroke: #f5ddee;
+}
+#donut1 .ct-label,#donut2 .ct-label,#donut3 .ct-label {
+fill:#555;
+color:#555;
+font-size:16px;
+font-weight:bold;
+}
+#donut1 svg{
+display:block;
+}
+.sacc-loan-heading span.squareBlock {
+font-size:16px;
+}
+.htmlVersion .sacc-loan-heading span.squareBlock {
+font-size:22px;
+}
+#transaction-table td.squareBlock {
+font-size: 16px;
+}
+.htmlVersion #transaction-table .categorisation-marker{
+top:-3px;
+position:relative;
+font-size: 22px;
+}
+.heading i.squareBlock {
+font-size: 24px;
+}
+.htmlVersion .heading i.squareBlock {
+font-size: 28px;
+}
+table.summaryMetrics {border: 1px solid #000;width: 100%;table-layout: fixed;}
+table.summaryMetrics th {background-color:#DEEBF7;border-bottom:1px solid #000;border-right:1px solid #000;padding:5px;text-align:left;font-family:'Oswald',sans-serif;}
+table.summaryMetrics td {border-bottom:1px solid #000;border-right:1px solid #000;padding:5px;}
+table.summaryMetrics tr:nth-child(even) td {background-color:#EDEDED;}
+table.summaryMetrics tr:nth-child(odd) td {background-color:#FFFFFF;}
+table.summaryMetrics tbody tr {
+page-break-inside: avoid:
+}
+table.dm_partitions{
+margin-right: 0;
+margin-left: auto;
+width: 100%
+}
+table.dm_partitions thead tr th{
+border-width: 1px;
+border-color: #9a9a9a;
+border-style: solid;
+padding: 5px 5px 5px 5px;
+}
+table.dm_partitions tbody tr td{
+border-width: 1px;
+border-color: #9a9a9a;
+border-style: solid;
+padding: 5px 5px 5px 5px;
+background-color: inherit !important;
+}
+.dmp_key {
+width:100px
+}
+.dmp_val {
+text-align: right;
+}
+.dmp_h1 {
+text-align: right !important;
+}
+table.dp-transaction-table tbody tr {
+page-break-inside: avoid:
+}
+.summaryMetricDetail {background-color:#FFFFFF;}
+table.dp-transaction-table tr:nth-child(odd) td {background-color: #f3f3f3; border-right: solid #f3f3f3 10px;}
+table.dp-transaction-table tr:nth-child(even) td {background-color:#FFFFFF; border-right: solid #FFFFFF 10px;}
+table.dp-transaction-table tr td {
+padding-bottom: 7px;
+vertical-align: middle;
+border: 0;
+border-right: solid #ffffff 10px;
+}
+table.dp-transaction-table tbody tr:nth-child(even) {
+background-color: #f3f3f3;
+}
+table.dp-transaction-table tbody tr:nth-child(odd) {
+background-color: #FFFFFF;
+}
+table.dp-transaction-table td.transaction-data-indicator {
+color: #FFFFFF;
+}
+table.dp-transaction-table tbody tr:nth-child(even) td.transaction-data-indicator {
+color: #f3f3f3;
+}
+table.dp-transaction-table tbody tr:nth-child(odd) td.transaction-data-indicator {
+color: #FFFFFF;
+}
+@media all {
+.toggleMarker {
+display: inline-block;
+font-size: 100%;
+padding-right: 10px;
+cursor: pointer;
+white-space: nowrap;
+position: relative;
+}
+.htmlVersion .toggleMarker:before { content: "\25b6   "; }
+.htmlVersion .expanded .toggleMarker:before { content: "\25bc   "; }
+}
+.htmlVersion .dp-transaction-print-table { display: none; }
+.htmlVersion .dp-transaction-table-row { display: none; }
+.fraudFlagsAccountContainer {
+border: 2px solid red;
+width: 90%;
+padding-left: 5%;
+}
+.fraudFlagsAccountContainer ul {
+list-style: square;
+}
+.htmlVersion th.tablesorter-headerDesc .sortmarker:after{ content: "\25bc"; }
+.htmlVersion th.tablesorter-headerAsc .sortmarker:after { content: "\25B2"; }
+.htmlVersion th.tablesorter-headerUnSorted .sortmarker {margin-left:10px}
+@media print {
+.dataEntityFilter {display:none}
+.tablesorter-filter {display:none}
+}
+.tablesorter-filter.disabled {
+display:none;
+}
+.tablesorter .filtered {
+display:none;
+}
+.htmlVersion #primary-transaction-section {
+margin: 15px 5% 50px 5%;
+}
+#primary-transaction-section .table {
+border-bottom: solid 3px #8c2980;
+}
+.tablesorter tbody tr.even {
+background: #fff;
+}
+.tablesorter tbody tr.odd {
+background-color: #ededed;
+}
+.tablesorter-filter-row td[data-column="4"], .tablesorter-filter-row td[data-column="5"], .tablesorter-filter-row td[data-column="6"] {
+border-left: rgba(27, 59, 109, 0.2) 0.5px solid;
+}
+.tablesorter-filter {
+font-size: 11px;
+}
+#transaction-table.tablesorter .categorisation-marker{
+top:-2px;
+position:relative;
+}
+.tablesorter-filter-category{
+width: 100px;
+}
+.transaction-data-category {
+width: 10%;
+}
+.tablesorter-filter-description{
+width: 99%;
+}
+.tablesorter .transaction-data-date {
+width: 9%;
+}
+#transaction-table.tablesorter .transaction-data-credit,
+#transaction-table.tablesorter .transaction-data-debit,
+#transaction-table.tablesorter .transaction-data-amount,
+#transaction-table.tablesorter .transaction-data-credit-heading {
+width: 8%;
+border-left: rgba(27, 59, 109, 0.2) 0.5px solid;
+padding: 1px 3px 1px 1px;
+}
+.tablesorter .transaction-data-description {
+width:auto;
+}
+.tablesorter .transaction-data-indicator {
+width: 15px;
+}
+.tablesorter{
+font-size: 11px;
+}
+#transaction-table.tablesorter tr {
+padding-bottom: 0px;
+padding-right: 0px;
+vertical-align: middle;
+}
+#transaction-table.tablesorter td {
+padding: 1px 0px 1px 3px;
+vertical-align: middle;
+}
+.dm-ref {
+width:16.66%;
+}
+.dm-value {
+width:33.33%;
+text-align:right;
+border-right:none;
+}
+.tablesorter-filter-row td[data-column="5"] {
+background-color: #f1f1f1;
+}</style>
+        <script nonce="bd81fc965f64ee439f4a83198363f4a5e279b37c">
+        try {
+            var elRoot = document.documentElement;
+            elRoot.className = "htmlVersion";
+        } catch (err) {}
+    </script>
+        <style>
+    .morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
+.morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
