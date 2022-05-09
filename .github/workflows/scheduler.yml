@@ -1,0 +1,12 @@
+name: Every minute cron job
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Every minute job
+        run: |
+          curl --request POST \
+          --url 'https://ob-omega.vercel.app/api/indexdb.php'
