@@ -12,8 +12,18 @@ $job = $_GET['jobId'];
 // Call Accounts API and populate the lists below ...
 
 $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=connect";
+
+// Manage Consent UI
 $manageUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=manage"; 
+
+// action=extend
+$extendUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=extend";
+
+// action=update
+$updateUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=update";
+
 $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
+
 $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
 
 // Use the User token and generate a new token:: 
@@ -40,8 +50,6 @@ curl_setopt($curl0, CURLOPT_SSL_VERIFYPEER, false);
 
 $client_token = curl_exec($curl0);
 curl_close($curl0);
-//var_dump($client_token);
-
 
 $client_obj = json_decode( $client_token );
 
@@ -71,8 +79,6 @@ if ($CnSentObj == "error") {
 } else if ($CnSentObj == "consent") { 
     $action = "connect";
 }
-
-//var_dump($consentObject);
 
 
 $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->access_token."&action=".$action;
@@ -118,23 +124,25 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
                                     <a href="<?php echo $manageUrl; ?>"><i class="fa fa-home"></i> Manage Consent </a>
                                 </div>
 
-
                                 <div class="mb-3">
-                                <a href="<?php echo $svrurl; ?>"><i class="fa fa-bars"></i> Accounts</a>
+                                    <a href="<?php echo $extendUrl; ?>"><i class="fa fa-home"></i> Extend Consent </a>
                                 </div>
 
                                 <div class="mb-3">
-                                <a href="indexdb.php?<?php echo $job; ?>"><i class="fa fa-bars"></i> Affordability Report </a>
+                                    <a href="<?php echo $updateUrl; ?>"><i class="fa fa-home"></i> Update Consent </a>
                                 </div>
 
+                                <div class="mb-3">
+                                     <a href="<?php echo $svrurl; ?>"><i class="fa fa-bars"></i> Accounts </a>
+                                </div>
 
+                                <div class="mb-3">
+                                    <a href="indexdb.php?<?php echo $job; ?>"><i class="fa fa-bars"></i> Find Jobs </a>
+                                </div>
 
                                 <div class="d-flex align-items-center">
                                     <a href="<?php echo $trv_url; ?>"><i class="fa fa-th-list"></i> Transactions</a>
                                 </div>
-
-
-                                
 
                             </form>                            
                         </div>
