@@ -137,7 +137,7 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
                                 </div>
 
                                 <div class="mb-3">
-                                    <a href="indexdb.php?<?php echo $job; ?>"><i class="fa fa-bars"></i> Find Jobs </a>
+                                    <a href="indexdb.php?<?php echo "&job=".$job; ?>"><i class="fa fa-bars"></i> Find Jobs </a>
                                 </div>
 
                                 <div class="d-flex align-items-center">

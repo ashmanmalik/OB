@@ -2,6 +2,9 @@
 
 // Take the Job and use it.. 
 
+$job = $_GET['job'];
+echo $job;
+
 $url = "https://hooks.slack.com/services/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";
 
 $curl = curl_init($url);
