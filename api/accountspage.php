@@ -2,24 +2,18 @@
 
 <?php 
 
+if (empty($_COOKIE["userId"]) || empty($_COOKIE["serverToken"]) || empty($_COOKIE["clientToken"])) {
+    echo 'TOKEN OR USER is either empty, or not set at all - EDGE CASE';
+}
+if (empty($_GET['jobId'])) {
+    echo '\nJOB is either empty, or not set at all - EDGE CASE';
+}
+else { 
 
 $cltkn = $_COOKIE["clientToken"];
 $svr = $_COOKIE["serverToken"];
 $usr = $_COOKIE["userId"]; 
 $job = $_GET['jobId'];
-
-
-if (empty($_COOKIE["userId"]) || empty($_COOKIE["serverToken"]) || empty($_COOKIE["clientToken"])) {
-    echo 'TOKEN OR USER is either empty, or not set at all - EDGE CASE';
-    //throw new RuntimeException('Token is either empty, or not set at all');
-    //exit;
-}
-if (empty($_GET['jobId'])) {
-    echo 'JOB is either empty, or not set at all - EDGE CASE';
-    //exit; 
-}
-else { 
-
 
 // Call Accounts API and populate the lists below ...
 
