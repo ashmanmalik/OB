@@ -4,9 +4,11 @@
 
 if (empty($_COOKIE["userId"]) || empty($_COOKIE["serverToken"]) || empty($_COOKIE["clientToken"])) {
     echo 'TOKEN OR USER is either empty, or not set at all - EDGE CASE';
+    header("Location: https://ob-omega.vercel.app/");
 }
 if (empty($_GET['jobId'])) {
     echo '\nJOB is either empty, or not set at all - EDGE CASE';
+    header("Location: https://ob-omega.vercel.app/");
 }
 else { 
 
