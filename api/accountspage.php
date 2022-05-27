@@ -18,6 +18,7 @@ if (empty($_GET['jobId'])) {
     echo 'JOB is either empty, or not set at all - EDGE CASE';
     //exit; 
 }
+else { 
 
 
 // Call Accounts API and populate the lists below ...
@@ -172,4 +173,8 @@ $newurl = "https://consent.basiq.io/home?userId=".$usr."&token=".$client_obj->ac
 
 </body>
 </html>
+<?php 
+}
 
+
+?>
