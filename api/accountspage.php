@@ -2,19 +2,24 @@
 
 <?php 
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
+Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
+
 $cltkn = $_COOKIE["clientToken"];
 $svr = $_COOKIE["serverToken"];
 $usr = $_COOKIE["userId"]; 
 $job = $_GET['jobId'];
 
 
-if ($cltkn == "" || $svr == "" || $usr = "") { 
-    echo 'Token is either empty, or not set at all - Exception'; 
-    exit;
+if (empty($_COOKIE["userId"]) || empty($_COOKIE["serverToken"]) || empty($_COOKIE["clientToken"])) { 
+    throw new RuntimeException('Token is either empty, or not set at all');
+    //exit;
 }
-if (empty($job)) {
-    echo '$job is either empty, or not set at all - Exception';
-    exit; 
+if (empty($_GET['jobId'])) {
+    echo 'Job is either empty, or not set at all - Exception';
+    throw new RuntimeException('Job is either empty, or not set at all - Exception');
+    //exit; 
 }
 
 
