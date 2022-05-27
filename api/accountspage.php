@@ -7,7 +7,16 @@ $svr = $_COOKIE["serverToken"];
 $usr = $_COOKIE["userId"]; 
 $job = $_GET['jobId'];
 
-//echo $job;
+
+if ($cltkn == "" || $svr == "" || $usr = "") { 
+    echo 'Token is either empty, or not set at all - Exception'; 
+    exit;
+}
+if (empty($job)) {
+    echo '$job is either empty, or not set at all - Exception';
+    exit; 
+}
+
 
 // Call Accounts API and populate the lists below ...
 
