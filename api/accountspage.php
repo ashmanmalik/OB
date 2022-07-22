@@ -2,13 +2,15 @@
 
 <?php 
 
-require_once __DIR__ . '/../vendor/autoload.php';
-Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
 
 if (empty($_COOKIE["userId"]) || empty($_COOKIE["serverToken"]) || empty($_COOKIE["clientToken"])) {
+    require_once __DIR__ . '/../vendor/autoload.php';
+    Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
     throw new RuntimeException('TOKEN OR USER is either empty, or not set at all - EDGE CASE!');
 }
 if (empty($_GET['jobId'])) {
+    require_once __DIR__ . '/../vendor/autoload.php';
+    Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
     throw new RuntimeException('JOB is either empty, or not set at all - EDGE CASE!');
 }
 else { 
