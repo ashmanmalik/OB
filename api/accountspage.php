@@ -2,13 +2,14 @@
 
 <?php 
 
+require_once __DIR__ . '/../vendor/autoload.php';
+Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
+
 if (empty($_COOKIE["userId"]) || empty($_COOKIE["serverToken"]) || empty($_COOKIE["clientToken"])) {
-    echo 'TOKEN OR USER is either empty, or not set at all - EDGE CASE';
-    header("Location: https://ob-omega.vercel.app/");
+    throw new RuntimeException('TOKEN OR USER is either empty, or not set at all - EDGE CASE!');
 }
 if (empty($_GET['jobId'])) {
-    echo '\nJOB is either empty, or not set at all - EDGE CASE';
-    header("Location: https://ob-omega.vercel.app/");
+    throw new RuntimeException('JOB is either empty, or not set at all - EDGE CASE!');
 }
 else { 
 
@@ -18,31 +19,21 @@ $usr = $_COOKIE["userId"];
 $job = $_GET['jobId'];
 
 // Call Accounts API and populate the lists below ...
-
 $url = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=connect";
-
 // Manage Consent UI
 $manageUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=manage"; 
-
 // action=extend
 $extendUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=extend";
-
 // action=update
 $updateUrl = "https://consent.basiq.io/home?userId=".$usr."&token=".$cltkn."&action=update";
-
 $svrurl = "listaccounts.php?userId=".$usr."&token=".$svr;
-
 $trv_url = "transactionstest.php?userId=".$usr."&token=".$svr;
-
 // Use the User token and generate a new token:: 
-
 $url0 = "https://au-api.basiq.io/token";
-
 $curl0 = curl_init($url0);
 curl_setopt($curl0, CURLOPT_URL, $url0);
 curl_setopt($curl0, CURLOPT_POST, true);
 curl_setopt($curl0, CURLOPT_RETURNTRANSFER, true);
-
 $headers0 = array(
    "Content-Type: application/json",
    "Authorization: Basic NzM4NDE4YjktNDdlYy00OGI2LTg5ODEtNjg0OGI3NzU2ZDczOjgxM2RhNDc3LTU5YjEtNDFlOS1iOGE5LWM5MzExMDRmNDI5OQ==",
