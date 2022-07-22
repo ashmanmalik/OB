@@ -7,13 +7,6 @@
 if (empty($_COOKIE["userId"]) || empty($_COOKIE["serverToken"]) || empty($_COOKIE["clientToken"])) {
     echo 'TOKEN OR USER is either empty, or not set at all - EDGE CASE';
     header("Location: https://ob-omega.vercel.app/");
-
-    require_once __DIR__ . '/../vendor/autoload.php';
-
-    Tracy\Debugger::enable(Tracy\Debugger::DEVELOPMENT);
-
-    throw new RuntimeException('Hello Tracy!');
-
 }
 if (empty($_GET['jobId'])) {
     echo '\nJOB is either empty, or not set at all - EDGE CASE';
